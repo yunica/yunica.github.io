@@ -1,3 +1,7 @@
+// ##############################
+// // // NavPills component style
+// #############################
+
 import {
   roseColor,
   primaryColor,
@@ -5,7 +9,7 @@ import {
   successColor,
   warningColor,
   dangerColor
-} from "assets/jss/material-kit-react.jsx";
+} from "assets/jss/material-kit-pro-react.jsx";
 
 const navPillsStyle = theme => ({
   root: {
@@ -42,7 +46,8 @@ const navPillsStyle = theme => ({
     height: "auto",
     opacity: "1",
     maxWidth: "100%",
-    margin: "0 5px"
+    margin: "0 5px",
+    minHeight: "unset"
   },
   pillsWithIcons: {
     borderRadius: "4px"
@@ -74,7 +79,11 @@ const navPillsStyle = theme => ({
     color: "inherit"
   },
   contentWrapper: {
-    marginTop: "20px"
+    marginTop: "20px",
+    "& .react-swipeable-view-container > div > div": {
+      paddingLeft: "15px",
+      paddingRight: "15px"
+    }
   },
   primary: {
     "&,&:hover": {

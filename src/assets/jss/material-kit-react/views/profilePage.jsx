@@ -1,13 +1,30 @@
-import { container, title } from "assets/jss/material-kit-react.jsx";
+import {
+  container,
+  cardTitle,
+  title,
+  mlAuto,
+  mrAuto,
+  main,
+  mainRaised
+} from "assets/jss/material-kit-pro-react.jsx";
 
-import imagesStyle from "assets/jss/material-kit-react/imagesStyles.jsx";
+import imagesStyle from "assets/jss/material-kit-pro-react/imagesStyles.jsx";
+
+import tooltipsStyle from "assets/jss/material-kit-pro-react/tooltipsStyle.jsx";
 
 const profilePageStyle = {
   container,
+  ...imagesStyle,
+  ...tooltipsStyle,
+  cardTitleWhite: {
+    ...cardTitle,
+    color: "#FFFFFF !important"
+  },
+  cardTitle,
   profile: {
     textAlign: "center",
     "& img": {
-      maxWidth: "200px",
+      maxWidth: "160px",
       width: "100%",
       margin: "0 auto",
       transform: "translate3d(0, -50%, 0)"
@@ -16,46 +33,113 @@ const profilePageStyle = {
   description: {
     margin: "1.071rem auto 0",
     maxWidth: "600px",
-    color: "#999",
+    color: "#999"
+  },
+  textCenter: {
     textAlign: "center !important"
   },
   name: {
     marginTop: "-80px"
   },
-  ...imagesStyle,
+
   main: {
-    background: "#FFFFFF",
-    position: "relative",
-    zIndex: "3"
+    ...main
   },
   mainRaised: {
-    margin: "-60px 30px 0px",
-    borderRadius: "6px",
-    boxShadow:
-      "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+    ...mainRaised
   },
   title: {
     ...title,
-    display: "inline-block",
     position: "relative",
     marginTop: "30px",
     minHeight: "32px",
     textDecoration: "none"
   },
-  socials: {
-    marginTop: "0",
-    width: "100%",
-    transform: "none",
-    left: "0",
+  follow: {
+    position: "absolute",
     top: "0",
-    height: "100%",
-    lineHeight: "41px",
-    fontSize: "20px",
-    color: "#999"
+    right: "0"
   },
-  navWrapper: {
-    margin: "20px auto 50px auto",
-    textAlign: "center"
+  followIcon: {
+    width: "20px",
+    height: "20px"
+  },
+  followButton: {
+    marginTop: "-28px !important"
+  },
+  gridItem: {
+    ...mlAuto,
+    ...mrAuto
+  },
+  collections: {
+    marginTop: "20px"
+  },
+  cardBody: {
+    display: "flex",
+    boxOrient: "vertical",
+    boxDirection: "normal",
+    flexDirection: "column",
+    boxPack: "center",
+    justifyContent: "center"
+  },
+  badge: {
+    display: "inline-table",
+    margin: "0 auto"
+  },
+  listUnstyled: {
+    paddingLeft: "0",
+    listStyle: "none",
+    "& > li": {
+      padding: "5px 0px",
+      fontSize: "1em"
+    }
+  },
+  profileTabs: {
+    marginTop: "4.284rem",
+    marginBottom: "50px"
+  },
+  card: {
+    textAlign: "left !important"
+  },
+  block: {
+    color: "inherit",
+    padding: "0.9375rem",
+    fontWeight: "500",
+    fontSize: "12px",
+    textTransform: "uppercase",
+    borderRadius: "3px",
+    textDecoration: "none",
+    position: "relative",
+    display: "block"
+  },
+  inlineBlock: {
+    display: "inline-block",
+    padding: "0px",
+    width: "auto"
+  },
+  list: {
+    marginBottom: "0",
+    padding: "0",
+    marginTop: "0"
+  },
+  left: {
+    float: "left!important",
+    display: "block"
+  },
+  right: {
+    padding: "15px 0",
+    margin: "0",
+    float: "right"
+  },
+  icon: {
+    width: "18px",
+    height: "18px",
+    top: "3px",
+    position: "relative"
+  },
+  parallax: {
+    height: "380px",
+    backgroundPosition: "top center"
   }
 };
 
