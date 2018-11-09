@@ -4,20 +4,25 @@ import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
-import Camera from "@material-ui/icons/Camera";
-import Palette from "@material-ui/icons/Palette";
-import Favorite from "@material-ui/icons/Favorite";
+import Face from "@material-ui/icons/Face";
+import Description from "@material-ui/icons/Description";
+import Code from "@material-ui/icons/Code";
+import Extension from "@material-ui/icons/Extension";
+
 // core components
 import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import HeaderLinksProfile from "components/Header/HeaderLinksProfile.jsx";
 import NavPills from "components/NavPills/NavPills.jsx";
 import Parallax from "components/Parallax/Parallax.jsx";
 
-import profile from "assets/img/faces/christian.jpg";
+import profile from "assets/img/perfil.jpg";
+// sections
+import WorkSection from "./Sections/WorkSection.jsx";
+
 
 import studio1 from "assets/img/examples/studio-1.jpg";
 import studio2 from "assets/img/examples/studio-2.jpg";
@@ -45,8 +50,8 @@ class ProfilePage extends React.Component {
       <div>
         <Header
           color="transparent"
-          brand="Material Kit React"
-          rightLinks={<HeaderLinks />}
+          brand=" "
+          rightLinks={<HeaderLinksProfile />}
           fixed
           changeColorOnScroll={{
             height: 200,
@@ -54,7 +59,7 @@ class ProfilePage extends React.Component {
           }}
           {...rest}
         />
-        <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
+        <Parallax small filter image={require("assets/img/bg7.jpg")} />
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div>
             <div className={classes.container}>
@@ -65,16 +70,19 @@ class ProfilePage extends React.Component {
                       <img src={profile} alt="..." className={imageClasses} />
                     </div>
                     <div className={classes.name}>
-                      <h3 className={classes.title}>Christian Louboutin</h3>
-                      <h6>DESIGNER</h6>
-                      <Button justIcon link className={classes.margin5}>
-                        <i className={"fab fa-twitter"} />
+                      <h3 className={classes.title}>Junior Flores</h3>
+                      <h6>DESARROLLADOR</h6>
+                      <Button justIcon link className={classes.margin5}
+                      href="https://github.com/yunica" target="_blank">
+                        <i className={"fab fa-github"} />
                       </Button>
-                      <Button justIcon link className={classes.margin5}>
-                        <i className={"fab fa-instagram"} />
+                      <Button justIcon link className={classes.margin5}
+                      href="https://gitlab.com/yunica" target="_blank">
+                        <i className={"fab fa-gitlab"} />
                       </Button>
-                      <Button justIcon link className={classes.margin5}>
-                        <i className={"fab fa-facebook"} />
+                      <Button justIcon link className={classes.margin5} 
+                      href="https://www.linkedin.com/in/juniorflores/" target="_blank">
+                        <i className={"fab fa-linkedin"} />
                       </Button>
                     </div>
                   </div>
@@ -82,21 +90,22 @@ class ProfilePage extends React.Component {
               </GridContainer>
               <div className={classes.description}>
                 <p>
-                  An artist of considerable range, Chet Faker — the name taken
-                  by Melbourne-raised, Brooklyn-based Nick Murphy — writes,
-                  performs and records all of his own music, giving it a warm,
-                  intimate feel with a solid groove structure.{" "}
+                Apasionado por la tecnologia, actualmente soy desarrollador freelance.
+Defensor del open source, la auto-educación y la creatividad.
+Disfruto del séptimo arte, la fotografiá, la lectura 
+y me encantan los juegos de mesa
+                 .{" "}
                 </p>
               </div>
               <GridContainer justify="center">
-                <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
+                <GridItem xs={12} sm={12} md={9} className={classes.navWrapper}>
                   <NavPills
                     alignCenter
                     color="primary"
                     tabs={[
                       {
-                        tabButton: "Studio",
-                        tabIcon: Camera,
+                        tabButton: "Sobre mi",
+                        tabIcon: Face,
                         tabContent: (
                           <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={4}>
@@ -127,8 +136,8 @@ class ProfilePage extends React.Component {
                         )
                       },
                       {
-                        tabButton: "Work",
-                        tabIcon: Palette,
+                        tabButton: "Estudios",
+                        tabIcon: Description,
                         tabContent: (
                           <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={4}>
@@ -164,8 +173,45 @@ class ProfilePage extends React.Component {
                         )
                       },
                       {
-                        tabButton: "Favorite",
-                        tabIcon: Favorite,
+                        tabButton: "Habilidades",
+                        tabIcon: Extension,
+                        tabContent: (
+                          <GridContainer justify="center">
+                            <GridItem xs={12} sm={12} md={4}>
+                              <img
+                                alt="..."
+                                src={work1}
+                                className={navImageClasses}
+                              />
+                              <img
+                                alt="..."
+                                src={work2}
+                                className={navImageClasses}
+                              />
+                              <img
+                                alt="..."
+                                src={work3}
+                                className={navImageClasses}
+                              />
+                            </GridItem>
+                            <GridItem xs={12} sm={12} md={4}>
+                              <img
+                                alt="..."
+                                src={work4}
+                                className={navImageClasses}
+                              />
+                              <img
+                                alt="..."
+                                src={work5}
+                                className={navImageClasses}
+                              />
+                            </GridItem>
+                          </GridContainer>
+                        )
+                      },
+                      {
+                        tabButton: "Experiencia",
+                        tabIcon: Code,
                         tabContent: (
                           <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={4}>
@@ -206,6 +252,8 @@ class ProfilePage extends React.Component {
               </GridContainer>
             </div>
           </div>
+        <WorkSection />
+
         </div>
         <Footer />
       </div>
