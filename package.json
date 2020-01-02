@@ -1,7 +1,8 @@
 {
-  "name": "material-kit-react",
-  "version": "1.8.0",
+  "name": "Junior_Profile",
+  "version": "1.0.0",
   "description": "Material Kit React. Coded by Creative Tim",
+  "homepage": "http://yunica.github.io/",
   "private": true,
   "main": "dist/index.js",
   "dependencies": {
@@ -30,6 +31,7 @@
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react": "7.14.3",
+    "gh-pages": "^2.1.1",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "prettier": "1.18.2"
@@ -39,7 +41,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && gulp licenses",
+    "build": "gh-pages -d build ",
+    "predeploy": "npm run build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
