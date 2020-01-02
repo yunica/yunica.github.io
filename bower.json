@@ -1,6 +1,5 @@
 {
   "name": "material-kit-react",
-  "homepage": "https://github.com/creativetimofficial/material-kit-react",
   "authors": [
     "creative-tim"
   ],
@@ -13,7 +12,6 @@
     "google",
     "twitter"
   ],
-  "license": "Creative TIM License",
   "ignore": [
     "**/.*",
     "node_modules",
