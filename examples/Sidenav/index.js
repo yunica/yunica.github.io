@@ -11,6 +11,10 @@ import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
 
 // NextJS Material Dashboard 2 PRO components
 import MDBox from "/components/MDBox";
@@ -32,6 +36,7 @@ import {
   setMiniSidenav,
   setTransparentSidenav,
   setWhiteSidenav,
+  setDarkMode,
 } from "/context";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
@@ -238,7 +243,15 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       return returnValue;
     }
   );
+
   const isHome = pathname === "/";
+  const modeIco = darkMode ? (
+    <Icon fontSize="medium">light_mode</Icon>
+  ) : (
+    <Icon fontSize="medium">dark_mode</Icon>
+  );
+  const handleDarkMode = () => setDarkMode(dispatch, !darkMode);
+
   return (
     <SidenavRoot
       {...rest}
@@ -264,7 +277,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <MDBox display="flex" alignItems="center" justifyContent="center">
               {brand && brand.src && (
                 <MDAvatar
-                  miniSidenav={miniSidenav}
+                  minisidenav={miniSidenav}
                   src={brand.src}
                   alt={brandName}
                 />
@@ -282,7 +295,22 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         />
       )}
 
-      <List>{renderRoutes}</List>
+      <List>
+        {renderRoutes}
+        <Link
+          href=""
+          component="button"
+          variant="body2"
+          onClick={handleDarkMode}
+        >
+          <SidenavCollapse
+            name={`${darkMode ? "Light" : "Dark"} mode`}
+            icon={modeIco}
+            noCollapse={true}
+            active={false}
+          />
+        </Link>
+      </List>
     </SidenavRoot>
   );
 }

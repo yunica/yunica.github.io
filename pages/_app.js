@@ -131,7 +131,6 @@ function Main({ Component, pageProps }) {
       <Component {...pageProps} />
       {layout === "dashboard" && (
         <>
-          {configsButton}
           <Sidenav
             color={sidenavColor}
             brand={avatarPhoto}
@@ -140,6 +139,7 @@ function Main({ Component, pageProps }) {
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
+          {configsButton}
         </>
       )}
     </ThemeProvider>

@@ -1,6 +1,10 @@
 // NextJS Material Dashboard 2 PRO components
 // @mui icons
 import Icon from "@mui/material/Icon";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 // Images
 const routes = [
@@ -9,7 +13,7 @@ const routes = [
     name: "Junior flores",
     key: "Junior-flores",
     route: "/",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    icon: <Icon fontSize="medium">rocket</Icon>,
     noCollapse: true,
   },
   { type: "divider", key: "divider-0" },
@@ -17,75 +21,76 @@ const routes = [
     type: "collapse",
     name: "About",
     key: "about",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    route: "/about",
+    icon: <Icon fontSize="medium">person</Icon>,
     noCollapse: true,
   },
   {
     type: "collapse",
     name: "Services",
     key: "services",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    route: "/services",
+    icon: <Icon fontSize="medium">business_center</Icon>,
     noCollapse: true,
   },
   {
     type: "collapse",
     name: "Projects",
     key: "projects",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    route: "/projects",
+    icon: <Icon fontSize="medium">code_blocks</Icon>,
     noCollapse: true,
   },
   {
     type: "collapse",
     name: "Contact",
     key: "contact",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    route: "/contact",
+    icon: <Icon fontSize="medium">mail</Icon>,
     noCollapse: true,
   },
-  { type: "divider", key: "divider-1" },
   {
     type: "collapse",
     name: "hobbies",
     key: "hobbies",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    route: "/hobbies",
+    icon: <Icon fontSize="medium">skateboarding</Icon>,
     noCollapse: true,
   },
+  { type: "title", title: "Social", key: "title-social" },
   {
     type: "collapse",
-    name: "github",
+    name: "@yunica",
     key: "github",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    href: "https://github.com/yunica",
+    icon: <GitHubIcon color="inherit" />,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "linkedin",
+    name: "@juniorflores",
     key: "linkeding",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    href: "https://www.linkedin.com/in/juniorflores/",
+    icon: <LinkedInIcon color="inherit" />,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "twitter",
+    name: "@yunica__",
     key: "twitter",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    href: "https://twitter.com/yunica__",
+    icon: <TwitterIcon color="inherit" />,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "instagram",
+    name: "@junior__floresm",
     key: "instagram",
-    href: "https://github.com/creativetimofficial/ct-nextjs-material-dashboard-pro/blob/main/CHANGELOG.md",
-    icon: <Icon fontSize="medium">receipt_long</Icon>,
+    href: "https://www.instagram.com/junior__floresm/",
+    icon: <InstagramIcon color="inherit" />,
     noCollapse: true,
   },
+  { type: "divider", key: "divider-3" },
 ];
 
 export default routes;

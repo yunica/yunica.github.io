@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import MDAvatarRoot from "/components/MDAvatar/MDAvatarRoot";
 
 const MDAvatar = forwardRef(({ bgColor, size, shadow, ...rest }, ref) => {
-  if (rest.miniSidenav===false){size="xxl"}
+  if (rest.minisidenav===false){size="xxl"}
   return (
     <MDAvatarRoot ref={ref} ownerState={{ shadow, bgColor, size }} {...rest} />
   );
