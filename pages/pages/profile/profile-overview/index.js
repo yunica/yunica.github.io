@@ -1,18 +1,3 @@
-/**
-=========================================================
-* NextJS Material Dashboard 2 PRO - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/nextjs-material-dashboard-pro
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
@@ -28,7 +13,6 @@ import MDTypography from "/components/MDTypography";
 
 // NextJS Material Dashboard 2 PRO examples
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "/examples/Navbars/DashboardNavbar";
 import Footer from "/examples/Footer";
 import ProfileInfoCard from "/examples/Cards/InfoCards/ProfileInfoCard";
 import ProfilesList from "/examples/Lists/ProfilesList";
@@ -54,7 +38,6 @@ import team4 from "/assets/images/team-4.jpg";
 function Overview() {
   return (
     <DashboardLayout>
-      <DashboardNavbar />
       <MDBox mb={2} />
       <Header>
         <MDBox mt={5} mb={3}>

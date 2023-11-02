@@ -1,18 +1,3 @@
-/**
-=========================================================
-* NextJS Material Dashboard 2 PRO - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/nextjs-material-dashboard-pro
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
@@ -30,6 +15,7 @@ import Icon from "@mui/material/Icon";
 // NextJS Material Dashboard 2 PRO components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
+import MDAvatar from "/components/MDAvatar";
 
 // NextJS Material Dashboard 2 PRO examples
 import SidenavCollapse from "/examples/Sidenav/SidenavCollapse";
@@ -78,7 +64,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   useEffect(() => {
     // A function that sets the mini state of the sidenav.
     function handleMiniSidenav() {
-      setMiniSidenav(dispatch, window.innerWidth < 1200);
+      setMiniSidenav(dispatch, true);
       setTransparentSidenav(
         dispatch,
         window.innerWidth < 1200 ? false : transparentSidenav
@@ -252,7 +238,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       return returnValue;
     }
   );
-
+  const isHome = pathname === "/";
   return (
     <SidenavRoot
       {...rest}
@@ -273,40 +259,29 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </MDTypography>
         </MDBox>
-        <Link href="/">
-          <MDBox display="flex" alignItems="center">
-            {brand && brand.src ? (
-              <MDBox
-                component="img"
-                src={brand.src}
-                alt={brandName}
-                width="1.75rem"
-              />
-            ) : (
-              brand
-            )}
-            <MDBox
-              width={!brandName && "100%"}
-              sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
-            >
-              <MDTypography
-                component="h6"
-                variant="button"
-                fontWeight="medium"
-                color={textColor}
-              >
-                {brandName}
-              </MDTypography>
+        {!isHome && (
+          <Link href="/">
+            <MDBox display="flex" alignItems="center" justifyContent="center">
+              {brand && brand.src && (
+                <MDAvatar
+                  miniSidenav={miniSidenav}
+                  src={brand.src}
+                  alt={brandName}
+                />
+              )}
             </MDBox>
-          </MDBox>
-        </Link>
+          </Link>
+        )}
       </MDBox>
-      <Divider
-        light={
-          (!darkMode && !whiteSidenav && !transparentSidenav) ||
-          (darkMode && !transparentSidenav && whiteSidenav)
-        }
-      />
+      {!isHome && (
+        <Divider
+          light={
+            (!darkMode && !whiteSidenav && !transparentSidenav) ||
+            (darkMode && !transparentSidenav && whiteSidenav)
+          }
+        />
+      )}
+
       <List>{renderRoutes}</List>
     </SidenavRoot>
   );

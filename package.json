@@ -1,10 +1,10 @@
 {
-  "name": "nextjs-material-dashboard-2-pro",
+  "name": "portfolio",
   "version": "2.2.0",
   "private": true,
-  "author": "Creative Tim",
-  "license": "SEE LICENSE IN <https://www.creative-tim.com/license>",
-  "description": "NextJS version of Material Dashboard 2 PRO by Creative Tim",
+  "author": "Yunica",
+  "license": "SEE LICENSE",
+  "description": "NextJS version of yunica protfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
