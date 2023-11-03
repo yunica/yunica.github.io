@@ -1,5 +1,3 @@
-
-
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -10,7 +8,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 

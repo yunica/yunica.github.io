@@ -1,10 +1,10 @@
 
 
-// NextJS Material Dashboard 2 PRO Base Styles
+// Custom Base Styles
 import typography from "/assets/theme-dark/base/typography";
 import borders from "/assets/theme-dark/base/borders";
 
-// NextJS Material Dashboard 2 PRO Helper Functions
+// Custom Helper Functions
 import pxToRem from "/assets/theme-dark/functions/pxToRem";
 
 const { fontWeightBold, size } = typography;

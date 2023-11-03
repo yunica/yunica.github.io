@@ -1,15 +1,15 @@
 
 
 /**
- * The base box-shadow styles for the NextJS Material Dashboard 2 PRO.
+ * The base box-shadow styles for the Custom.
  * You can add new box-shadow using this file.
- * You can customized the box-shadow for the entire NextJS Material Dashboard 2 PRO using thie file.
+ * You can customized the box-shadow for the entire Custom using thie file.
  */
 
-// NextJS Material Dashboard 2 PRO Base Styles
+// Custom Base Styles
 import colors from "/assets/theme-dark/base/colors";
 
-// NextJS Material Dashboard 2 PRO Helper Functions
+// Custom Helper Functions
 import boxShadow from "/assets/theme-dark/functions/boxShadow";
 
 const { black, dark, tabs, coloredShadows } = colors;

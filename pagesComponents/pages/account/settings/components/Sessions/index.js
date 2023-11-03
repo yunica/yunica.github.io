@@ -1,11 +1,9 @@
-
-
 // @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 import Divider from "@mui/material/Divider";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDBadge from "/components/MDBadge";

@@ -7,13 +7,11 @@ import PropTypes from "prop-types";
 
 // react-chartjs-2 components
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
-
-// @mui material components
+import { Pie } from "react-chartjs-2";// @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 

@@ -15,12 +15,12 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDInput from "/components/MDInput";
 import MDBadge from "/components/MDBadge";
 
-// NextJS Material Dashboard 2 PRO examples
+// Custom examples
 import Breadcrumbs from "/examples/Breadcrumbs";
 import NotificationItem from "/examples/Items/NotificationItem";
 
@@ -34,7 +34,7 @@ import {
   navbarMobileMenu,
 } from "/examples/Navbars/DashboardNavbar/styles";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import {
   useMaterialUIController,
   setTransparentNavbar,

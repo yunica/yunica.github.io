@@ -1,14 +1,12 @@
 
 
-import Image from "next/image";
-
-// @mui material components
+import Image from "next/image";// @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDButton from "/components/MDButton";
@@ -17,7 +15,7 @@ import MDButton from "/components/MDButton";
 import masterCardLogo from "/assets/images/logos/mastercard.png";
 import visaLogo from "/assets/images/logos/visa.png";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import { useMaterialUIController } from "/context";
 
 function PaymentMethod() {

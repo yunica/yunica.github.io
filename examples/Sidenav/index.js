@@ -4,9 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 // prop-types is a library for typechecking of props.
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
@@ -16,12 +14,12 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDAvatar from "/components/MDAvatar";
 
-// NextJS Material Dashboard 2 PRO examples
+// Custom examples
 import SidenavCollapse from "/examples/Sidenav/SidenavCollapse";
 import SidenavList from "/examples/Sidenav/SidenavList";
 import SidenavItem from "/examples/Sidenav/SidenavItem";
@@ -30,7 +28,7 @@ import SidenavItem from "/examples/Sidenav/SidenavItem";
 import SidenavRoot from "/examples/Sidenav/SidenavRoot";
 import sidenavLogoLabel from "/examples/Sidenav/styles/sidenav";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import {
   useMaterialUIController,
   setMiniSidenav,
@@ -294,7 +292,6 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           }
         />
       )}
-
       <List>
         {renderRoutes}
         <Link

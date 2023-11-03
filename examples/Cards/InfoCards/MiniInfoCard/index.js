@@ -1,13 +1,11 @@
 
 
 // prop-types is library for typechecking of props
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 

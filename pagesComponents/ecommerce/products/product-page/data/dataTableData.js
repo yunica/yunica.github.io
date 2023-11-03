@@ -1,6 +1,6 @@
 
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDProgress from "/components/MDProgress";
 

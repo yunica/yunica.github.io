@@ -3,9 +3,7 @@ import { useState, useEffect, Fragment } from "react";
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
-import Link from "next/link";
-
-// @mui material components
+import Link from "next/link";// @mui material components
 import Icon from "@mui/material/Icon";
 import Popper from "@mui/material/Popper";
 import Grow from "@mui/material/Grow";
@@ -14,19 +12,19 @@ import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
 import Container from "@mui/material/Container";
 
-// NextJS Material Dashboard 2 PRO TS components
+// Custom TS components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDButton from "/components/MDButton";
 
-// NextJS Material Dashboard 2 PRO TS examples components
+// Custom TS examples components
 import DefaultNavbarDropdown from "/examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 import DefaultNavbarMobile from "/examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
-// NextJS Material Dashboard 2 PRO TS Base Styles
+// Custom TS Base Styles
 import breakpoints from "/assets/theme/base/breakpoints";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import { useMaterialUIController } from "/context";
 
 function DefaultNavbar({ routes, brand, transparent, light, action }) {

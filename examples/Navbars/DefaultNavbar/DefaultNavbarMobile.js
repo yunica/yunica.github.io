@@ -5,18 +5,16 @@ import { useState } from "react";
 import Link from "next/link";
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import Collapse from "@mui/material/Collapse";
 import MuiLink from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO TS components
+// Custom TS components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
-// NextJS Material Dashboard 2 PRO TS exampless
+// Custom TS exampless
 import DefaultNavbarDropdown from "/examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 
 function DefaultNavbarMobile({ routes, open }) {

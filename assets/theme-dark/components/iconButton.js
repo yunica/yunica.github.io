@@ -1,6 +1,6 @@
 
 
-// NextJS Material Dashboard 2 PRO Base Styles
+// Custom Base Styles
 import colors from "/assets/theme-dark/base/colors";
 
 const { transparent } = colors;

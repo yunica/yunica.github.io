@@ -8,13 +8,13 @@ import PropTypes from "prop-types";
 // Dropzone styles
 import "dropzone/dist/dropzone.css";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 
 // Custom styles for the MDDropzone
 import MDDropzoneRoot from "/components/MDDropzone/MDDropzoneRoot";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import { useMaterialUIController } from "/context";
 
 function MDDropzone({ options }) {

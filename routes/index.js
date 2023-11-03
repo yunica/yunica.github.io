@@ -1,4 +1,4 @@
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 // @mui icons
 import Icon from "@mui/material/Icon";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -38,7 +38,7 @@ const routes = [
     name: "Projects",
     key: "projects",
     route: "/projects",
-    icon: <Icon fontSize="medium">code_blocks</Icon>,
+    icon: <Icon fontSize="medium">developer_mode</Icon>,
     noCollapse: true,
   },
   {

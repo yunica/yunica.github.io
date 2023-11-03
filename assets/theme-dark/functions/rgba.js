@@ -5,7 +5,7 @@
   to convert the hex code into rgb for using it inside the rgba color format.
  */
 
-// NextJS Material Dashboard 2 PRO helper functions
+// Custom helper functions
 import hexToRgb from "/assets/theme-dark/functions/hexToRgb";
 
 function rgba(color, opacity) {

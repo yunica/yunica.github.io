@@ -14,22 +14,20 @@ import {
   Filler,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
-
-// @mui material components
+import { Line } from "react-chartjs-2";// @mui material components
 import Card from "@mui/material/Card";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 
-// Next.js Material Dashboard 2 PRO components
+//  components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
 // Chart configurations
 import configs from "./configs";
 
-// Next.js Material Dashboard 2 PRO base styles
+//  base styles
 import typography from "/assets/theme/base/typography";
 
 ChartJS.register(

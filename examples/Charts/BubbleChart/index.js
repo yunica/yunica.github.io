@@ -13,20 +13,18 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bubble } from "react-chartjs-2";
-
-// @mui material components
+import { Bubble } from "react-chartjs-2";// @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
 // BubbleChart configurations
 import configs from "/examples/Charts/BubbleChart/configs";
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import colors from "/assets/theme/base/colors";
 
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);

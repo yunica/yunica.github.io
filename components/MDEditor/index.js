@@ -19,7 +19,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 // Custom styles for the MDEditor
 import MDEditorRoot from "./MDEditorRoot";
 
-// Material Dashboard 2 PRO React context
+// Custom React context
 import { useMaterialUIController } from "../../context";
 
 function MDEditor({ value }) {

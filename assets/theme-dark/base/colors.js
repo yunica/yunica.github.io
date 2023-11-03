@@ -1,9 +1,9 @@
 
 
 /**
- * The base colors for the NextJS Material Dashboard 2 PRO.
+ * The base colors for the Custom.
  * You can add new color using this file.
- * You can customized the colors for the entire NextJS Material Dashboard 2 PRO using thie file.
+ * You can customized the colors for the entire Custom using thie file.
  */
 
 const colors = {

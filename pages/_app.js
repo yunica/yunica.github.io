@@ -7,30 +7,27 @@ import { useRouter } from "next/router";
 import createCache from "@emotion/cache";
 
 // @emotion/react components
-import { CacheProvider } from "@emotion/react";
-
-// @mui material components
+import { CacheProvider } from "@emotion/react";// @mui material components
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 
-// NextJS Material Dashboard 2 PRO examples
+// Custom examples
 import Sidenav from "/examples/Sidenav";
-import Configurator from "/examples/Configurator";
 
-// NextJS Material Dashboard 2 PRO themes
+// Custom themes
 import theme from "/assets/theme";
 
-// NextJS Material Dashboard 2 PRO Dark Mode themes
+// Custom Dark Mode themes
 import themeDark from "/assets/theme-dark";
 
-// NextJS Material Dashboard 2 PRO routes
+// Custom routes
 import routes from "/routes";
 
-// NextJS Material Dashboard 2 PRO Context Provider
+// Custom Context Provider
 import {
   MaterialUIControllerProvider,
   useMaterialUIController,
@@ -46,7 +43,7 @@ import appleIcon from "/assets/images/favicon-96.png";
 
 import brandWhite from "/assets/images/logo-ct.png";
 import brandDark from "/assets/images/logo-ct-dark.png";
-import avatarPhoto from "/assets/images/team-3.jpg";
+import avatarPhoto from "/assets/images/profile.jpeg";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createCache({ key: "css", prepend: true });

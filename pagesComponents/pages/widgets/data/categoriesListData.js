@@ -1,6 +1,6 @@
 
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDTypography from "/components/MDTypography";
 
 const categoriesListData = [

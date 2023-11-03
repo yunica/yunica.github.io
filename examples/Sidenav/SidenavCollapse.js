@@ -1,16 +1,14 @@
 
 
 // prop-types is a library for typechecking of props.
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import Collapse from "@mui/material/Collapse";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 
 // Custom styles for the SidenavCollapse
@@ -22,7 +20,7 @@ import {
   collapseArrow,
 } from "/examples/Sidenav/styles/sidenavCollapse";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import { useMaterialUIController } from "/context";
 
 function SidenavCollapse({

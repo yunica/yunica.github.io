@@ -7,19 +7,17 @@ import PropTypes from "prop-types";
 import FullCalendar from "@fullcalendar/react";
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import dayGridPlugin from "@fullcalendar/daygrid";
-
-// @mui material components
+import dayGridPlugin from "@fullcalendar/daygrid";// @mui material components
 import Card from "@mui/material/Card";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
 // Custom styles for Calendar
 import CalendarRoot from "/examples/Calendar/CalendarRoot";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import { useMaterialUIController } from "/context";
 
 function Calendar({ header, ...rest }) {

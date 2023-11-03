@@ -1,12 +1,10 @@
-
-
 // @mui material components
 import Card from "@mui/material/Card";
 import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 import Grid from "@mui/material/Grid";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDButton from "/components/MDButton";
@@ -16,7 +14,7 @@ import PieChart from "/examples/Charts/PieChart";
 // Data
 import channelChartData from "/pagesComponents/dashboards/sales/components/ChannelsChart/data";
 
-// NextJS Material Dashboard 2 PRO contexts
+// Custom contexts
 import { useMaterialUIController } from "/context";
 
 function ChannelsChart() {

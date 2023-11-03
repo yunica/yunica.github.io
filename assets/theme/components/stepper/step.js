@@ -1,6 +1,6 @@
 
 
-// NextJS Material Dashboard 2 PRO helper functions
+// Custom helper functions
 import pxToRem from "/assets/theme/functions/pxToRem";
 
 const step = {

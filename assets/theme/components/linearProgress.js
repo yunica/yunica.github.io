@@ -1,10 +1,10 @@
 
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import borders from "/assets/theme/base/borders";
 import colors from "/assets/theme/base/colors";
 
-// NextJS Material Dashboard 2 PRO helper functions
+// Custom helper functions
 import pxToRem from "/assets/theme/functions/pxToRem";
 
 const { borderRadius } = borders;

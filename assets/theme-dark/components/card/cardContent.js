@@ -1,6 +1,6 @@
 
 
-// NextJS Material Dashboard 2 PRO Helper Functions
+// Custom Helper Functions
 import pxToRem from "/assets/theme-dark/functions/pxToRem";
 
 const cardContent = {

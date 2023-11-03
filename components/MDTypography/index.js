@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // Custom styles for MDTypography
 import MDTypographyRoot from "/components/MDTypography/MDTypographyRoot";
 
-// NextJS Material Dashboard 2 PRO contexts
+// Custom contexts
 import { useMaterialUIController } from "/context";
 
 const MDTypography = forwardRef(

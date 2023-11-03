@@ -1,6 +1,6 @@
 
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import typography from "/assets/theme/base/typography";
 
 function configs(labels, datasets) {

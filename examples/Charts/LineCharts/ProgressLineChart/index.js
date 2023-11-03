@@ -17,13 +17,11 @@ import {
   Legend,
   Filler,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
-
-// @mui material components
+import { Line } from "react-chartjs-2";// @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDProgress from "/components/MDProgress";

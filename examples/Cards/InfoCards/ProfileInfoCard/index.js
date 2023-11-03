@@ -3,19 +3,17 @@
 import Link from "next/link";
 
 // prop-types is library for typechecking of props
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import colors from "/assets/theme/base/colors";
 import typography from "/assets/theme/base/typography";
 

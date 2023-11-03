@@ -3,9 +3,7 @@
 import { useState, useEffect } from "react";
 
 // prop-types is a library for typechecking of props.
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import AppBar from "@mui/material/AppBar";
@@ -13,12 +11,12 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDAvatar from "/components/MDAvatar";
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import breakpoints from "/assets/theme/base/breakpoints";
 
 // Images

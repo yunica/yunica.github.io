@@ -19,23 +19,21 @@ import {
   LineController,
   BarController,
   Filler,
-} from "chart.js";
-
-// @mui material components
+} from "chart.js";// @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// Next.js Material Dashboard 2 PRO components
+//  components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
-// Next.js Material Dashboard 2 PRO helper functions
+//  helper functions
 import gradientChartLine from "/assets/theme/functions/gradientChartLine";
 
 // MixedChart configurations
 import configs from "/examples/Charts/MixedChart/configs";
 
-// Next.js Material Dashboard 2 PRO base styles
+//  base styles
 import colors from "/assets/theme/base/colors";
 
 ChartJS.register(

@@ -3,20 +3,18 @@
 import { useMemo } from "react";
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDTypography from "/components/MDTypography";
 import MDBox from "/components/MDBox";
 
-// NextJS Material Dashboard 2 PRO examples
+// Custom examples
 import SalesTableCell from "/examples/Tables/SalesTable/SalesTableCell";
 
 function SalesTable({ title, rows, shadow }) {

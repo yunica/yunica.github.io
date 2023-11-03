@@ -1,23 +1,21 @@
 
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import Grid from "@mui/material/Grid";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
-// NextJS Material Dashboard 2 PRO examples
+// Custom examples
 import DefaultNavbar from "/examples/Navbars/DefaultNavbar";
 import PageLayout from "/examples/LayoutContainers/PageLayout";
 
-// NextJS Material Dashboard 2 PRO page layout routes
+// Custom page layout routes
 import pageRoutes from "/routes/page.routes";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import { useMaterialUIController } from "/context";
 
 function IllustrationLayout({

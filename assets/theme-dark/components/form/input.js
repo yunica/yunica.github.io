@@ -1,11 +1,11 @@
 
 
-// NextJS Material Dashboard 2 PRO Base Styles
+// Custom Base Styles
 import colors from "/assets/theme-dark/base/colors";
 import typography from "/assets/theme-dark/base/typography";
 import borders from "/assets/theme-dark/base/borders";
 
-// NextJS Material Dashboard 2 PRO Helper Functions
+// Custom Helper Functions
 import rgba from "/assets/theme-dark/functions/rgba";
 
 const { white, inputBorderColor, dark, grey } = colors;

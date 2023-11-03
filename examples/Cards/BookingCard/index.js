@@ -3,18 +3,40 @@
 import Image from "next/image";
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
-
-// @mui material components
+import PropTypes from "prop-types";// @mui material components
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
+import Tooltip from "@mui/material/Tooltip";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
+import MDAvatar from "/components/MDAvatar";
 
-function BookingCard({ image, title, description, price, location, action }) {
+function BookingCard({ image, title, description, price, location, action, authors=[] }) {
+ 
+  const renderAuthors = authors.map(({ image: media, name }) => (
+    <Tooltip key={name} title={name} placement="bottom">
+      <MDAvatar
+        src={media.src || media}
+        alt={name}
+        size="xs"
+        sx={({ borders: { borderWidth }, palette: { white } }) => ({
+          border: `${borderWidth[2]} solid ${white.main}`,
+          cursor: "pointer",
+          position: "relative",
+          ml: -1.25,
+
+          "&:hover, &:focus": {
+            zIndex: "10",
+          },
+        })}
+      />
+    </Tooltip>
+  ));
+
+ 
   return (
     <Card
       sx={{
@@ -105,6 +127,8 @@ function BookingCard({ image, title, description, price, location, action }) {
             {location}
           </MDTypography>
         </MDBox>
+        <MDBox display="flex">{renderAuthors}</MDBox>
+
       </MDBox>
     </Card>
   );
@@ -113,6 +137,7 @@ function BookingCard({ image, title, description, price, location, action }) {
 // Setting default values for the props of BookingCard
 BookingCard.defaultProps = {
   action: false,
+  authors: [],
 };
 
 // Typechecking props for the BookingCard
@@ -123,6 +148,7 @@ BookingCard.propTypes = {
   price: PropTypes.string.isRequired,
   location: PropTypes.node.isRequired,
   action: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
+  authors: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default BookingCard;

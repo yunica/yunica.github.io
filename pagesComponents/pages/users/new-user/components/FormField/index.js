@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // formik components
 import { ErrorMessage, Field } from "formik";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDInput from "/components/MDInput";

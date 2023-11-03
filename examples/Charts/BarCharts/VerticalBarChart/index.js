@@ -15,20 +15,18 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
-
-// @mui material components
+import { Bar } from "react-chartjs-2";// @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
 // VerticalBarChart configurations
 import configs from "/examples/Charts/BarCharts/VerticalBarChart/configs";
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import colors from "/assets/theme/base/colors";
 
 ChartJS.register(

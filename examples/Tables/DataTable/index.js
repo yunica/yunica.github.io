@@ -15,9 +15,7 @@ import {
 } from "react-table";
 
 // regenerator-runtime
-import "regenerator-runtime/runtime.js";
-
-// @mui material components
+import "regenerator-runtime/runtime.js";// @mui material components
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
@@ -25,13 +23,13 @@ import TableRow from "@mui/material/TableRow";
 import Icon from "@mui/material/Icon";
 import Autocomplete from "@mui/material/Autocomplete";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDInput from "/components/MDInput";
 import MDPagination from "/components/MDPagination";
 
-// NextJS Material Dashboard 2 PRO examples
+// Custom examples
 import DataTableHeadCell from "/examples/Tables/DataTable/DataTableHeadCell";
 import DataTableBodyCell from "/examples/Tables/DataTable/DataTableBodyCell";
 

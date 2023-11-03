@@ -5,12 +5,10 @@ import Image from "next/image";
 import { useState } from "react";
 
 // react-images-viewer components
-import ImgsViewer from "react-images-viewer";
-
-// @mui material components
+import ImgsViewer from "react-images-viewer";// @mui material components
 import Stack from "@mui/material/Stack";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 
 // Images

@@ -1,15 +1,15 @@
 
 
 /**
- * The base typography styles for the NextJS Material Dashboard 2 PRO.
+ * The base typography styles for the Custom.
  * You can add new typography style using this file.
- * You can customized the typography styles for the entire NextJS Material Dashboard 2 PRO using thie file.
+ * You can customized the typography styles for the entire Custom using thie file.
  */
 
-// NextJS Material Dashboard 2 PRO Base Styles
+// Custom Base Styles
 import colors from "/assets/theme/base/colors";
 
-// NextJS Material Dashboard 2 PRO Helper Functions
+// Custom Helper Functions
 import pxToRem from "/assets/theme/functions/pxToRem";
 
 const { dark } = colors;

@@ -1,9 +1,9 @@
 
 
 /**
- * The base breakpoints for the NextJS Material Dashboard 2 PRO.
+ * The base breakpoints for the Custom.
  * You can add new breakpoints using this file.
- * You can customized the breakpoints for the entire NextJS Material Dashboard 2 PRO using thie file.
+ * You can customized the breakpoints for the entire Custom using thie file.
  */
 
 const breakpoints = {

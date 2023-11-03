@@ -1,12 +1,12 @@
 
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import boxShadows from "/assets/theme-dark/base/boxShadows";
 import typography from "/assets/theme-dark/base/typography";
 import colors from "/assets/theme-dark/base/colors";
 import borders from "/assets/theme-dark/base/borders";
 
-// NextJS Material Dashboard 2 PRO helper functions
+// Custom helper functions
 import pxToRem from "/assets/theme-dark/functions/pxToRem";
 import rgba from "/assets/theme-dark/functions/rgba";
 

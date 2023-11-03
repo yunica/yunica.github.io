@@ -1,15 +1,13 @@
 
 
-import { useState } from "react";
-
-// @mui material components
+import { useState } from "react";// @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 import Switch from "@mui/material/Switch";
 import Tooltip from "@mui/material/Tooltip";
 import Divider from "@mui/material/Divider";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDAvatar from "/components/MDAvatar";
@@ -22,7 +20,7 @@ import logoSpotify from "/assets/images/small-logos/logo-spotify.svg";
 import logoAtlassian from "/assets/images/small-logos/logo-atlassian.svg";
 import logoAsana from "/assets/images/small-logos/logo-asana.svg";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import { useMaterialUIController } from "/context";
 
 function Accounts() {

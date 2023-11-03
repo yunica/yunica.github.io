@@ -1,17 +1,15 @@
 
 
-import Image from "next/image";
-
-// @mui material components
+import Image from "next/image";// @mui material components
 import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDButton from "/components/MDButton";
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import borders from "/assets/theme/base/borders";
 
 // Images

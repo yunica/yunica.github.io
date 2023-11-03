@@ -1,10 +1,10 @@
 
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import colors from "/assets/theme-dark/base/colors";
 import typography from "/assets/theme-dark/base/typography";
 
-// NextJS Material Dashboard 2 PRO helper functions
+// Custom helper functions
 import pxToRem from "/assets/theme-dark/functions/pxToRem";
 
 const { white } = colors;

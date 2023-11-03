@@ -3,13 +3,13 @@ import { createContext, useContext, useMemo, useReducer } from "react";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-// The NextJS Material Dashboard 2 PRO main context
+// The Custom main context
 const MaterialUI = createContext();
 
 // Setting custom name for the context which is visible on react dev tools
 MaterialUI.displayName = "MaterialUIContext";
 
-// NextJS Material Dashboard 2 PRO reducer
+// Custom reducer
 function reducer(state, action) {
   switch (action.type) {
     case "MINI_SIDENAV": {
@@ -48,7 +48,7 @@ function reducer(state, action) {
   }
 }
 
-// NextJS Material Dashboard 2 PRO context provider
+// Custom context provider
 function MaterialUIControllerProvider({ children }) {
   const initialState = {
     miniSidenav: true,
@@ -70,7 +70,7 @@ function MaterialUIControllerProvider({ children }) {
   return <MaterialUI.Provider value={value}>{children}</MaterialUI.Provider>;
 }
 
-// NextJS Material Dashboard 2 PRO custom hook for using context
+//  hook for using context
 function useMaterialUIController() {
   const context = useContext(MaterialUI);
 

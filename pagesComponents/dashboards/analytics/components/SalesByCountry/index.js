@@ -1,17 +1,15 @@
 
 
-import { useEffect } from "react";
-
-// @mui material components
+import { useEffect } from "react";// @mui material components
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
-// NextJS Material Dashboard 2 PRO examples
+// Custom examples
 import SalesTable from "/examples/Tables/SalesTable";
 
 // Data

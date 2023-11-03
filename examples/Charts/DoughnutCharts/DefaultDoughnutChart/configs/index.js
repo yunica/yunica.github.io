@@ -1,7 +1,7 @@
 
 
 /* eslint-disable no-dupe-keys */
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import colors from "/assets/theme/base/colors";
 
 const { gradients, dark } = colors;

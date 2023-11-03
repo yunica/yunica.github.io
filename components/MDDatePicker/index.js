@@ -9,7 +9,7 @@ import Flatpickr from "react-flatpickr";
 // react-flatpickr styles
 import "flatpickr/dist/flatpickr.css";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDInput from "/components/MDInput";
 
 function MDDatePicker({ input, ...rest }) {

@@ -1,9 +1,9 @@
 
 
-// NextJS Material Dashboard 2 PRO base styles
+// Custom base styles
 import colors from "/assets/theme/base/colors";
 
-// NextJS Material Dashboard 2 PRO helper functions
+// Custom helper functions
 import pxToRem from "/assets/theme/functions/pxToRem";
 import boxShadow from "/assets/theme/functions/boxShadow";
 

@@ -3,9 +3,7 @@
 import { useState, useEffect } from "react";
 
 // react-github-btn
-import GitHubButton from "react-github-btn";
-
-// @mui material components
+import GitHubButton from "react-github-btn";// @mui material components
 import Divider from "@mui/material/Divider";
 import Switch from "@mui/material/Switch";
 import IconButton from "@mui/material/IconButton";
@@ -16,7 +14,7 @@ import Icon from "@mui/material/Icon";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
-// NextJS Material Dashboard 2 PRO components
+// Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDButton from "/components/MDButton";
@@ -24,7 +22,7 @@ import MDButton from "/components/MDButton";
 // Custom styles for the Configurator
 import ConfiguratorRoot from "/examples/Configurator/ConfiguratorRoot";
 
-// NextJS Material Dashboard 2 PRO context
+// Custom context
 import {
   useMaterialUIController,
   setOpenConfigurator,
