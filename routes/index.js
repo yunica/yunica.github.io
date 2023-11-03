@@ -37,7 +37,7 @@ const routes = [
     type: "collapse",
     name: "Projects",
     key: "projects",
-    route: "/projects",
+    route: "/project",
     icon: <Icon fontSize="medium">developer_mode</Icon>,
     noCollapse: true,
   },

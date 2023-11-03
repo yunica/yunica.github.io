@@ -11,5 +11,8 @@ const withTM = require("next-transpile-modules")([
 
 module.exports = withTM({
   reactStrictMode: true,
-
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 });
