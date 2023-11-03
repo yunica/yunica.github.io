@@ -1,9 +1,7 @@
-
-
 import Image from "next/image";
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";// @mui material components
+import PropTypes from "prop-types"; // @mui material components
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
@@ -14,34 +12,33 @@ import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDAvatar from "/components/MDAvatar";
 
-function BookingCard({ image, title, description, price, location, action, authors=[] }) {
- 
-  const renderAuthors = authors.map(({ image: media, name }) => (
-    <Tooltip key={name} title={name} placement="bottom">
-      <MDAvatar
-        src={media.src || media}
-        alt={name}
-        size="xs"
-        sx={({ borders: { borderWidth }, palette: { white } }) => ({
-          border: `${borderWidth[2]} solid ${white.main}`,
-          cursor: "pointer",
-          position: "relative",
-          ml: -1.25,
+function BookingCard({ image, title, description, category, tags }) {
+  const renderTags =
+    tags &&
+    tags.map(({ image: media, name }) => (
+      <Tooltip key={name} title={name} placement="bottom">
+        <MDAvatar
+          src={media.src || media}
+          alt={name}
+          size="xs"
+          sx={({ borders: { borderWidth }, palette: { white } }) => ({
+            border: `${borderWidth[2]} solid ${white.main}`,
+            cursor: "pointer",
+            position: "relative",
+            ml: -1.25,
+            "&:hover, &:focus": {
+              zIndex: "10",
+            },
+          })}
+        />
+      </Tooltip>
+    ));
 
-          "&:hover, &:focus": {
-            zIndex: "10",
-          },
-        })}
-      />
-    </Tooltip>
-  ));
-
- 
   return (
     <Card
       sx={{
         "&:hover .card-header": {
-          transform: action && "translate3d(0, -50px, 0)",
+          transform: "translate3d(0, -50px, 0)",
         },
       }}
     >
@@ -56,23 +53,21 @@ function BookingCard({ image, title, description, price, location, action, autho
         <MDBox
           borderRadius="lg"
           shadow="md"
-          width="100%"
+          width={"100%"}
           height="100%"
           position="relative"
           zIndex={1}
           overflow="hidden"
         >
-          {image.src ? (
-            <Image
-              src={image}
-              alt={title}
-              size="100%"
-              quality={100}
-              style={{ width: "100%", height: "100%", display: "block" }}
-            />
-          ) : (
-            image
-          )}
+          <Image
+            src={image}
+            alt={title}
+            size="100%"
+            width={100}
+            height={100}
+            quality={100}
+            style={{ width: "100%", height: "100%", display: "block" }}
+          />
         </MDBox>
         <MDBox
           borderRadius="lg"
@@ -83,7 +78,7 @@ function BookingCard({ image, title, description, price, location, action, autho
           left={0}
           top="0"
           sx={{
-            backgroundImage: `url(${image.src || image.props.src.src})`,
+            backgroundImage: `url(${image})`,
             transform: "scale(0.94)",
             filter: "blur(12px)",
             backgroundSize: "cover",
@@ -95,9 +90,28 @@ function BookingCard({ image, title, description, price, location, action, autho
           display="flex"
           justifyContent="center"
           alignItems="center"
-          mt={action ? -8 : -4.25}
+          mt={-8}
         >
-          {action}
+          <Tooltip title="Refresh" placement="bottom">
+            <MDTypography
+              variant="body1"
+              color="primary"
+              lineHeight={1}
+              sx={{ cursor: "pointer", mx: 3 }}
+            >
+              <Icon color="inherit">refresh</Icon>
+            </MDTypography>
+          </Tooltip>
+          <Tooltip title="Edit" placement="bottom">
+            <MDTypography
+              variant="body1"
+              color="dark"
+              lineHeight={1}
+              sx={{ cursor: "pointer", mx: 3 }}
+            >
+              <Icon color="inherit">edit</Icon>
+            </MDTypography>
+          </Tooltip>
         </MDBox>
         <MDTypography variant="h5" fontWeight="regular" sx={{ mt: 4 }}>
           {title}
@@ -117,18 +131,9 @@ function BookingCard({ image, title, description, price, location, action, autho
         lineHeight={1}
       >
         <MDTypography variant="body2" fontWeight="regular" color="text">
-          {price}
+          {category}
         </MDTypography>
-        <MDBox color="text" display="flex" alignItems="center">
-          <Icon color="inherit" sx={{ m: 0.5 }}>
-            place
-          </Icon>
-          <MDTypography variant="button" fontWeight="light" color="text">
-            {location}
-          </MDTypography>
-        </MDBox>
-        <MDBox display="flex">{renderAuthors}</MDBox>
-
+        <MDBox display="flex">{renderTags}</MDBox>
       </MDBox>
     </Card>
   );
@@ -136,19 +141,17 @@ function BookingCard({ image, title, description, price, location, action, autho
 
 // Setting default values for the props of BookingCard
 BookingCard.defaultProps = {
-  action: false,
-  authors: [],
+  tags: [],
 };
 
 // Typechecking props for the BookingCard
 BookingCard.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   location: PropTypes.node.isRequired,
-  action: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
-  authors: PropTypes.arrayOf(PropTypes.object),
+  tags: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default BookingCard;

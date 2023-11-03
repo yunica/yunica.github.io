@@ -3,8 +3,8 @@ import Router from "next/router";
 
 export default function Custom404() {
   useEffect(() => {
-    Router.push("/dashboards/analytics");
+    Router.push("/");
   });
-console.log("404")
+  console.log("404");
   return <div />;
 }
