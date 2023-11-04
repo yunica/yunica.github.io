@@ -1,6 +1,4 @@
-
 import { useEffect } from "react";
-
 import { useRouter } from "next/router";
 
 // prop-types is a library for typechecking of props.
@@ -8,6 +6,7 @@ import PropTypes from "prop-types";
 
 // Custom components
 import MDBox from "/components/MDBox";
+import Footer from "/examples/Footer";
 
 // Custom context
 import { useMaterialUIController, setLayout } from "/context";
@@ -36,7 +35,8 @@ function DashboardLayout({ children }) {
         },
       })}
     >
-      {children}
+      <div style={{minHeight:'87vh'}}>{children}</div>
+      <Footer />
     </MDBox>
   );
 }

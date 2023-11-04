@@ -3,12 +3,12 @@ import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
 
 // Images
 
-function Services() {
+function Hobbies() {
   return (
     <DashboardLayout>
-      <h1>Services</h1>
+      <h1>Hobbies</h1>
     </DashboardLayout>
   );
 }
 
-export default Services;
+export default Hobbies;

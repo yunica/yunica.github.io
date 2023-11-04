@@ -6,6 +6,41 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
+
+export const socialRoute = [
+  {
+    type: "collapse",
+    name: "@yunica",
+    key: "github",
+    href: "https://github.com/yunica",
+    icon: <GitHubIcon color="inherit" />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "@juniorflores",
+    key: "linkeding",
+    href: "https://www.linkedin.com/in/juniorflores/",
+    icon: <LinkedInIcon color="inherit" />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "@yunica__",
+    key: "twitter",
+    href: "https://twitter.com/yunica__",
+    icon: <TwitterIcon color="inherit" />,
+    noCollapse: true,
+  },
+  {
+    type: "collapse",
+    name: "@junior__floresm",
+    key: "instagram",
+    href: "https://www.instagram.com/junior__floresm/",
+    icon: <InstagramIcon color="inherit" />,
+    noCollapse: true,
+  },
+];
 // Images
 const routes = [
   {
@@ -58,38 +93,7 @@ const routes = [
     noCollapse: true,
   },
   { type: "title", title: "Social", key: "title-social" },
-  {
-    type: "collapse",
-    name: "@yunica",
-    key: "github",
-    href: "https://github.com/yunica",
-    icon: <GitHubIcon color="inherit" />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "@juniorflores",
-    key: "linkeding",
-    href: "https://www.linkedin.com/in/juniorflores/",
-    icon: <LinkedInIcon color="inherit" />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "@yunica__",
-    key: "twitter",
-    href: "https://twitter.com/yunica__",
-    icon: <TwitterIcon color="inherit" />,
-    noCollapse: true,
-  },
-  {
-    type: "collapse",
-    name: "@junior__floresm",
-    key: "instagram",
-    href: "https://www.instagram.com/junior__floresm/",
-    icon: <InstagramIcon color="inherit" />,
-    noCollapse: true,
-  },
+  ...socialRoute,
   { type: "divider", key: "divider-3" },
 ];
 

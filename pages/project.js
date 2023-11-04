@@ -48,6 +48,7 @@ export async function getStaticProps() {
 }
 
 function Project({ data }) {
+  
   const renderProjects = data.map((feature) => (
     <Grid item xs={12} md={4} lg={3} key={feature.filename}>
       <MDBox mt={3}>

@@ -25,7 +25,7 @@ import theme from "/assets/theme";
 import themeDark from "/assets/theme-dark";
 
 // Custom routes
-import routes from "/routes";
+import routes from "/utils/routes";
 
 // Custom Context Provider
 import {

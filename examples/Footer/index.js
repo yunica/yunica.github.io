@@ -1,7 +1,5 @@
-
-
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";// @mui material components
+import PropTypes from "prop-types"; // @mui material components
 import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
@@ -19,7 +17,7 @@ function Footer({ company, links }) {
   const renderLinks = () =>
     links.map((link) => (
       <MDBox key={link.name} component="li" px={2} lineHeight={1}>
-        <Link href={link.href} target="_blank">
+        <Link href={link.href} target={link.target || "_self"}>
           <MDTypography variant="button" fontWeight="regular" color="text">
             {link.name}
           </MDTypography>
@@ -44,6 +42,7 @@ function Footer({ company, links }) {
         color="text"
         fontSize={size.sm}
         px={1.5}
+        mt={2}
       >
         &copy; {new Date().getFullYear()}, made with
         <MDBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
@@ -84,12 +83,11 @@ function Footer({ company, links }) {
 
 // Setting default values for the props of Footer
 Footer.defaultProps = {
-  company: { href: "https://www.creative-tim.com/", name: "Creative Tim" },
+  company: { href: "https://yunica.dev/", name: "Junior", target: "_blank" },
   links: [
-    { href: "https://www.creative-tim.com/", name: "Creative Tim" },
-    { href: "https://www.creative-tim.com/presentation", name: "About Us" },
-    { href: "https://www.creative-tim.com/blog", name: "Blog" },
-    { href: "https://www.creative-tim.com/license", name: "License" },
+    { href: "/project", name: "Project" },
+    { href: "/services", name: "Services" },
+    { href: "/contact", name: "Contact" },
   ],
 };
 
