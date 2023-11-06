@@ -1,20 +1,17 @@
 // @mui material components
 import Grid from "@mui/material/Grid";
-import Icon from "@mui/material/Icon";
-import Tooltip from "@mui/material/Tooltip";
 import Card from "@mui/material/Card";
-import Link from "next/link";
 
 // Custom examples
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
-import CategoriesList from "/examples/Lists/CategoriesList";
 import MDButton from "/components/MDButton";
-import { socialRoute } from "../utils/routes";
 // Wizard application components
 import FormField from "/pagesComponents/applications/wizard/components/FormField";
 import { useMaterialUIController } from "/context";
+
+import SocialContact from "../pagesComponents/social/contact";
 
 function Contact() {
   const [controller] = useMaterialUIController();
@@ -73,48 +70,7 @@ function Contact() {
                         sx={{ listStyle: "none" }}
                         justifyContent="start"
                       >
-                        {socialRoute.map((item, itemKey) => (
-                          <MDBox key={itemKey} component="li">
-                            <MDTypography
-                              component="a"
-                              href={`#`}
-                              variant="button"
-                              fontWeight="regular"
-                              textTransform="capitalize"
-                              sx={({
-                                borders: { borderRadius },
-                                functions: { pxToRem },
-                                palette: { light },
-                                transitions,
-                              }) => ({
-                                display: "flex",
-                                alignItems: "center",
-                                borderRadius: borderRadius.md,
-                                padding: `${pxToRem(5)} ${pxToRem(16)}`,
-                                transition: transitions.create(
-                                  "background-color",
-                                  {
-                                    easing: transitions.easing.easeInOut,
-                                    duration: transitions.duration.shorter,
-                                  }
-                                ),
-
-                                "&:hover": {
-                                  backgroundColor: light.main,
-                                },
-                              })}
-                            >
-                              <MDBox
-                                lineHeight={1}
-                                color={darkMode ? "white" : "dark"}
-                                mr={1}
-                              >
-                                {item.icon}
-                              </MDBox>
-                              {item.name}
-                            </MDTypography>
-                          </MDBox>
-                        ))}
+                        <SocialContact />
                       </MDBox>
                     </Grid>
                     <Grid item xs={12} sm={7}>

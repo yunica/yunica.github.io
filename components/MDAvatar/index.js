@@ -1,13 +1,12 @@
 import { forwardRef } from "react";
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
+import PropTypes, { bool, string } from "prop-types";
 
 // Custom styles for MDAvatar
 import MDAvatarRoot from "/components/MDAvatar/MDAvatarRoot";
 
 const MDAvatar = forwardRef(({ bgColor, size, shadow, ...rest }, ref) => {
-  if (rest.minisidenav===false){size="xxl"}
   return (
     <MDAvatarRoot ref={ref} ownerState={{ shadow, bgColor, size }} {...rest} />
   );

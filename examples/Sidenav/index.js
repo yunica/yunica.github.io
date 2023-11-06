@@ -4,15 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 // prop-types is a library for typechecking of props.
-import PropTypes from "prop-types";// @mui material components
+import PropTypes from "prop-types"; // @mui material components
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 
 // Custom components
 import MDBox from "/components/MDBox";
@@ -275,9 +271,9 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <MDBox display="flex" alignItems="center" justifyContent="center">
               {brand && brand.src && (
                 <MDAvatar
-                  minisidenav={miniSidenav}
                   src={brand.src}
                   alt={brandName}
+                  size={miniSidenav ? "md" : "xxl"}
                 />
               )}
             </MDBox>

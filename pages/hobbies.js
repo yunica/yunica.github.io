@@ -8,8 +8,10 @@ import SimpleBlogCard from "/examples/Cards/BlogCards/SimpleBlogCard";
 import imageOfficeDark from "/assets/images/office-dark.jpg";
 import imageOfficeLighht from "/assets/images/office-light.jpg";
 import { useMaterialUIController } from "/context";
+
+
 function Hobbies() {
-  const [controller, dispatch] = useMaterialUIController();
+  const [controller] = useMaterialUIController();
   const { darkMode } = controller;
   return (
     <DashboardLayout>
