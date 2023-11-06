@@ -53,11 +53,11 @@ function Contact() {
                     <Grid item xs={12} sm={5} container justifyContent="center">
                       <MDBox mb={1}>
                         <MDTypography variant="h5" fontWeight="regular">
-                          Let's talk about your project
+                          Let&apos;s talk about your project
                         </MDTypography>
                         <MDTypography variant="body2" color="text" mt={2}>
                           Thinking about a new project, a problem to solve, or
-                          just want to connect? Let's do it!
+                          just want to connect? Let&apos;s do it!
                         </MDTypography>
                         <MDTypography variant="body2" color="text" mt={2}>
                           Use the form on this page or get in touch by other
@@ -133,7 +133,7 @@ function Contact() {
                           <FormField type="tel" label="Phone" />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                          <FormField type="email" label="Service" />
+                          <FormField type="text" label="Service" />
                         </Grid>
                         <Grid item xs={12} sm={12}>
                           <FormField

@@ -60,14 +60,14 @@ const routes = [
     icon: <Icon fontSize="medium">person</Icon>,
     noCollapse: true,
   },
-  {
-    type: "collapse",
-    name: "Services",
-    key: "services",
-    route: "/services",
-    icon: <Icon fontSize="medium">business_center</Icon>,
-    noCollapse: true,
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Services",
+  //   key: "services",
+  //   route: "/services",
+  //   icon: <Icon fontSize="medium">business_center</Icon>,
+  //   noCollapse: true,
+  // },
   {
     type: "collapse",
     name: "Projects",

@@ -1,10 +1,8 @@
-
-
 import Link from "next/link";
 import Image from "next/image";
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";// @mui material components
+import PropTypes from "prop-types"; // @mui material components
 import Card from "@mui/material/Card";
 import MuiLink from "@mui/material/Link";
 
@@ -14,6 +12,21 @@ import MDTypography from "/components/MDTypography";
 import MDButton from "/components/MDButton";
 
 function SimpleBlogCard({ image, title, description, action }) {
+  const renderAction =
+    action &&
+    (action.type === "external" ? (
+      <MuiLink href={action.route} target="_blank" rel="noreferrer">
+        <MDButton color={action.color ? action.color : "dark"}>
+          {action.label}
+        </MDButton>
+      </MuiLink>
+    ) : (
+      <Link href={action.route}>
+        <MDButton color={action.color ? action.color : "dark"}>
+          {action.label}
+        </MDButton>
+      </Link>
+    ));
   return (
     <Card>
       <MDBox position="relative" borderRadius="lg" mt={-3} mx={2}>
@@ -54,33 +67,21 @@ function SimpleBlogCard({ image, title, description, action }) {
           }}
         />
       </MDBox>
-      <MDBox p={3}>
+      <MDBox p={2}>
         <MDTypography
           display="inline"
-          variant="h3"
+          variant="h5"
           textTransform="capitalize"
           fontWeight="bold"
         >
           {title}
         </MDTypography>
-        <MDBox mt={2} mb={3}>
+        <MDBox mt={2} mb={2}>
           <MDTypography variant="body2" component="p" color="text">
             {description}
           </MDTypography>
         </MDBox>
-        {action.type === "external" ? (
-          <MuiLink href={action.route} target="_blank" rel="noreferrer">
-            <MDButton color={action.color ? action.color : "dark"}>
-              {action.label}
-            </MDButton>
-          </MuiLink>
-        ) : (
-          <Link href={action.route}>
-            <MDButton color={action.color ? action.color : "dark"}>
-              {action.label}
-            </MDButton>
-          </Link>
-        )}
+        {renderAction}
       </MDBox>
     </Card>
   );
