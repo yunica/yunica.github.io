@@ -11,21 +11,21 @@ export const experience = [
     detail:""
   },
   {
-    icon: "vpn_key",
+    icon: "data_object",
     title: "Cadastre assistant",
     dateTime: "Feb, 2019 - Oct, 2019",
     description: "SEDA Ayacucho",
     detail:""
   },
   {
-    icon: "vpn_key",
+    icon: "data_object",
     title: "Full stack developer",
     dateTime: "Oct, 2018 - current",
     description: "freelance",
     detail:""
   },
   {
-    icon: "vpn_key",
+    icon: "data_object",
     title: "Full stack developer",
     dateTime: "Aug, 2018 - Dec, 2018",
     description: "full stack developer at GacetaLaboral",
