@@ -107,7 +107,7 @@ SimpleBlogCard.propTypes = {
       "default",
     ]),
     label: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
 };
 
 export default SimpleBlogCard;

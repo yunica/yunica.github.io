@@ -25,7 +25,7 @@ import TimelineList from "/examples/Timeline/TimelineList";
 import TimelineItem from "/examples/Timeline/TimelineItem";
 
 // Data
-import { experience, cloudProps , expertice} from "/utils/constants";
+import { experience, cloudProps, expertice } from "/utils/constants";
 import { useMaterialUIController } from "/context";
 
 // Images
@@ -97,8 +97,8 @@ function About() {
       <MDBox mb={2} />
       <Header>
         <MDBox mt={3} mb={3}>
-          <Grid container spacing={1}>
-            <Grid item xs={12} md={6} xl={4}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={6} xl={4} >
               <Card sx={{ height: "100%", boxShadow: "none" }}>
                 <MDBox
                   display="flex"
@@ -129,12 +129,12 @@ function About() {
                       color="text"
                       fontWeight="light"
                     >
-                      Soy un Ingeniero de Datos Geoespaciales apasionado por
-                      transformar algoritmos y datos en soluciones con impacto
-                      real. Mi expertise abarca desde desarrollo backend hasta
-                      geoprocesamiento y CI/CD. Activo colaborador y ponente en
-                      la comunidad de OpenStreetMap, busco innovar y generar
-                      impacto.
+                      As a Geo-Spatial Data Engineer, I am zealous about turning
+                      algorithms and data into impactful solutions. My technical
+                      prowess spans backend development to geoprocessing and
+                      CI/CD. An active contributor and speaker in the
+                      OpenStreetMap community, my goal is to innovate and create
+                      meaningful change.
                     </MDTypography>
                   </MDBox>
                 </MDBox>
@@ -167,14 +167,13 @@ function About() {
                       color="text"
                       fontWeight="light"
                     >
-                      Fuera del entorno de los datos geoespaciales, mi pasión
-                      por viajar me lleva a capturar el mundo a través del lente
-                      de mi cámara y las historias del cine, buscando siempre
-                      nuevas perspectivas y narrativas. Como skater, encuentro
-                      libertad en el movimiento, y como motociclista, el gozo de
-                      explorar caminos desconocidos. En momentos de pausa,
-                      disfruto de la lectura, táctica y el compañerismo en los
-                      juegos de mesa.
+                      Beyond the realm of geospatial data, I am a travel
+                      enthusiast capturing the globe through my camera's lens
+                      and the narratives of cinema, always seeking fresh
+                      perspectives. As a skater, I relish the freedom of
+                      movement; as a biker, the joy of discovering new paths. In
+                      quieter times, I indulge in the strategic depths of
+                      reading and the camaraderie of board games.
                     </MDTypography>
                   </MDBox>
                 </MDBox>
@@ -256,7 +255,9 @@ function About() {
                   </MDTypography>
                 </MDBox>
                 <MDBox p={2}>
-                  <MDBox lineHeight={1}><ListSkill data={expertice} /></MDBox>
+                  <MDBox lineHeight={1}>
+                    <ListSkill data={expertice} />
+                  </MDBox>
                 </MDBox>
               </Card>
               <Divider orientation="vertical" sx={{ mx: 0 }} />
