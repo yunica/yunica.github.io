@@ -41,8 +41,6 @@ import favicon32 from "/assets/images/favicon-32.png";
 import favicon96 from "/assets/images/favicon-96.png";
 import appleIcon from "/assets/images/favicon-96.png";
 
-import brandWhite from "/assets/images/logo-ct.png";
-import brandDark from "/assets/images/logo-ct-dark.png";
 import avatarPhoto from "/assets/images/profile.jpeg";
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -94,9 +92,6 @@ function Main({ Component, pageProps }) {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
-
-  const brandIcon =
-    (transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite;
 
   const configsButton = (
     <MDBox

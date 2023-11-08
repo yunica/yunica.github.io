@@ -5,12 +5,7 @@ import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
 
 // cloud icons
-import {
-  Cloud,
-  renderSimpleIcon,
-  fetchSimpleIcons,
-  SimpleIcon,
-} from "react-icon-cloud";
+import { Cloud, renderSimpleIcon, fetchSimpleIcons } from "react-icon-cloud";
 
 // Custom components
 import MDBox from "/components/MDBox";
@@ -25,38 +20,13 @@ import TimelineList from "/examples/Timeline/TimelineList";
 import TimelineItem from "/examples/Timeline/TimelineItem";
 
 // Data
-import { experience, cloudProps, expertice } from "/utils/constants";
+import { experience, expertice } from "/utils/constants";
 import { useMaterialUIController } from "/context";
 
 // Images
 import SocialContact from "/pagesComponents/social/contact";
-import ListSkill from "../pagesComponents/social/skills";
-
-const useIcons = (slugs) => {
-  const [icons, setIcons] = useState();
-  useEffect(() => {
-    fetchSimpleIcons({ slugs }).then(({ simpleIcons }) =>
-      setIcons(Object.values(simpleIcons))
-    );
-  }, []);
-
-  if (icons) {
-    return icons.map((icon) =>
-      renderSimpleIcon({
-        icon,
-        size: 42,
-        aProps: {
-          onClick: (e) => {
-            e.preventDefault();
-            console.log(e);
-          },
-        },
-      })
-    );
-  }
-
-  return <a>Loading</a>;
-};
+import ListSkill from "/pagesComponents/social/skills";
+import DynamicCloud from "/pagesComponents/about/icon-cloud";
 
 function About() {
   const [controller] = useMaterialUIController();
@@ -74,6 +44,7 @@ function About() {
       />
     )
   );
+
   const slugs = [
     "amazonaws",
     "android",
@@ -83,14 +54,10 @@ function About() {
     "vercel",
     "visualstudiocode",
   ];
-
-  const icons = useIcons(slugs);
-
-  const dinamCloud = (
-    <Cloud id="id-dinam-cloud" {...cloudProps}>
-      {icons}
-    </Cloud>
-  );
+   const onClickEvent = (ev) => {
+    ev.preventDefault();
+    console.log(ev);
+  };
 
   return (
     <DashboardLayout>
@@ -98,7 +65,7 @@ function About() {
       <Header>
         <MDBox mt={3} mb={3}>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={6} xl={4} >
+            <Grid item xs={12} md={6} xl={4}>
               <Card sx={{ height: "100%", boxShadow: "none" }}>
                 <MDBox
                   display="flex"
@@ -168,8 +135,8 @@ function About() {
                       fontWeight="light"
                     >
                       Beyond the realm of geospatial data, I am a travel
-                      enthusiast capturing the globe through my camera's lens
-                      and the narratives of cinema, always seeking fresh
+                      enthusiast capturing the globe through my camera&apos;s
+                      lens and the narratives of cinema, always seeking fresh
                       perspectives. As a skater, I relish the freedom of
                       movement; as a biker, the joy of discovering new paths. In
                       quieter times, I indulge in the strategic depths of
@@ -230,7 +197,9 @@ function About() {
                   </MDTypography>
                 </MDBox>
                 <MDBox p={2}>
-                  <MDBox lineHeight={1}>{dinamCloud}</MDBox>
+                  <MDBox lineHeight={1}>
+                    <DynamicCloud iconSlugs={slugs} id="DynamicCloud-about" onclickEvent={onClickEvent}/>
+                  </MDBox>
                 </MDBox>
                 <MDBox
                   display="flex"

@@ -6,7 +6,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as BufferGeometryUtils from "three/addons/utils/BufferGeometryUtils.js";
 import pointsData from "/assets/points.json";
 
-function Globe({ canvasStyle, ...rest }) {
+function Globe({ canvasStyle,  ...rest }) {
   const globeRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -51,9 +51,8 @@ function Globe({ canvasStyle, ...rest }) {
         
         renderer.setSize(width, height);
         // 4. Add points to canvas
-        // - Material that the dots will be made of.
         const pointMaterial = new THREE.MeshBasicMaterial({
-          color: "#ff0000", // El color rojo, por ejemplo
+          color: "#4f5b6f", 
         });
         const geometries = [];
         for (const point of points) {

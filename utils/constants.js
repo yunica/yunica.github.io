@@ -1,6 +1,11 @@
-import Icon from "@mui/material/Icon";
-import { Public, DatasetLinked , PieChartOutline, Code, FilterDrama, Terminal} from "@mui/icons-material";
-
+import {
+  Public,
+  DatasetLinked,
+  PieChartOutline,
+  Code,
+  FilterDrama,
+  Terminal,
+} from "@mui/icons-material";
 
 export const experience = [
   {
@@ -8,37 +13,36 @@ export const experience = [
     title: "Geospatial data engineer",
     dateTime: "Oct, 2019 - current",
     description: "Development Seed.",
-    detail:""
+    detail: "",
   },
   {
     icon: "data_object",
     title: "Cadastre assistant",
     dateTime: "Feb, 2019 - Oct, 2019",
     description: "SEDA Ayacucho",
-    detail:""
+    detail: "",
   },
   {
     icon: "data_object",
     title: "Full stack developer",
     dateTime: "Oct, 2018 - current",
     description: "freelance",
-    detail:""
+    detail: "",
   },
   {
     icon: "data_object",
-    title: "Full stack developer",
+    title: "Front end",
     dateTime: "Aug, 2018 - Dec, 2018",
     description: "full stack developer at GacetaLaboral",
-    detail:""
+    detail: "",
   },
   {
     icon: "school",
     title: "Systems Engineer",
     dateTime: "Jan, 2018 - Aug, 2018 ",
     description: "Universidad Nacional de San Cristóbal de Huamanga",
-    detail:""
+    detail: "",
   },
-  
 ];
 
 export const cloudProps = {
@@ -47,11 +51,7 @@ export const cloudProps = {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
-  },
-  canvasProps: {
-    style: {
-      maxWidth: "300px",
+      width: "100%",
     },
   },
   options: {
@@ -64,6 +64,7 @@ export const cloudProps = {
     initial: [0.1, -0.1],
     tooltipDelay: 0,
     outlineColour: "#0000",
+    wheelZoom: false,
   },
 };
 
@@ -92,8 +93,8 @@ export const expertice = [
   {
     type: "collapse",
     name: "Backend developer",
-    key: "backend-developer", 
-     icon: <Code color="inherit" />,
+    key: "backend-developer",
+    icon: <Code color="inherit" />,
     noCollapse: true,
   },
   {
@@ -110,4 +111,4 @@ export const expertice = [
     icon: <Terminal color="inherit" />,
     noCollapse: true,
   },
-]
+];

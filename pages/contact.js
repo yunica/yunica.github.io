@@ -11,7 +11,7 @@ import MDButton from "/components/MDButton";
 import FormField from "/pagesComponents/applications/wizard/components/FormField";
 import { useMaterialUIController } from "/context";
 
-import SocialContact from "../pagesComponents/social/contact";
+import SocialContact from "/pagesComponents/social/contact";
 
 function Contact() {
   const [controller] = useMaterialUIController();
