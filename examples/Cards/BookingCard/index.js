@@ -150,7 +150,7 @@ BookingCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  location: PropTypes.node.isRequired,
+  location: PropTypes.node,
   tags: PropTypes.arrayOf(PropTypes.object),
 };
 

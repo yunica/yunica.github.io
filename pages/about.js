@@ -4,8 +4,12 @@ import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
 
-// cloud icons
-import { Cloud, renderSimpleIcon, fetchSimpleIcons } from "react-icon-cloud";
+// pages/api/markdown.js
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
 // Custom components
 import MDBox from "/components/MDBox";
@@ -26,9 +30,29 @@ import { useMaterialUIController } from "/context";
 // Images
 import SocialContact from "/pagesComponents/social/contact";
 import ListSkill from "/pagesComponents/social/skills";
-import DynamicCloud from "/pagesComponents/about/icon-cloud";
+import DynamicCloud from "/pagesComponents/about/iconCloud";
 
-function About() {
+export async function getStaticProps() {
+  const markdownDirectory = path.join(process.cwd(), "public", "markdown");
+  const filenames = fs.readdirSync(markdownDirectory);
+
+  const dataPromises = filenames.map(async (filename) => {
+    const filePath = path.join(markdownDirectory, filename);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data, content } = matter(fileContents);
+
+    return {
+      filename,
+      ...data,
+    };
+  });
+  const data = await Promise.all(dataPromises);
+
+  // data.sort((a, b) => (a.date > b.date ? -1 : 1));
+  return { props: { data } };
+}
+
+function About({ data }) {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
@@ -45,16 +69,9 @@ function About() {
     )
   );
 
-  const slugs = [
-    "amazonaws",
-    "android",
-    "androidstudio",
-    "antdesign",
-    "typescript",
-    "vercel",
-    "visualstudiocode",
-  ];
-   const onClickEvent = (ev) => {
+  const slugs = [...new Set([].concat(...data.map((i) => i.category)))];
+
+  const onClickEvent = (ev) => {
     ev.preventDefault();
     console.log(ev);
   };
@@ -198,7 +215,11 @@ function About() {
                 </MDBox>
                 <MDBox p={2}>
                   <MDBox lineHeight={1}>
-                    <DynamicCloud iconSlugs={slugs} id="DynamicCloud-about" onclickEvent={onClickEvent}/>
+                    <DynamicCloud
+                      iconSlugs={slugs}
+                      id="DynamicCloud-about"
+                      onclickEvent={onClickEvent}
+                    />
                   </MDBox>
                 </MDBox>
                 <MDBox

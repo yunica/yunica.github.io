@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
 
 // pages/api/markdown.js
 import fs from "fs";
@@ -15,12 +16,10 @@ import MDBox from "/components/MDBox";
 // Settings page components
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
 import BookingCard from "/examples/Cards/BookingCard";
-import Filter from "/pagesComponents/project/Filter";
+import DynamicCloud from "/pagesComponents/about/iconCloud";
 
-import team1 from "/assets/images/team-1.jpg";
-import team2 from "/assets/images/team-2.jpg";
-import team3 from "/assets/images/team-3.jpg";
-import team4 from "/assets/images/team-4.jpg";
+import avatarPhoto from "/assets/images/profile.jpeg";
+import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
 
 export async function getStaticProps() {
   const markdownDirectory = path.join(process.cwd(), "public", "markdown");
@@ -43,12 +42,18 @@ export async function getStaticProps() {
   const data = await Promise.all(dataPromises);
 
   // data.sort((a, b) => (a.date > b.date ? -1 : 1));
-
   return { props: { data } };
 }
 
 function Project({ data }) {
-  
+  const onClickEvent = (ev) => {
+    ev.preventDefault();
+    console.log(ev);
+  };
+
+  console.log(data);
+  const slugs = [...new Set([].concat(...data.map((i) => i.category)))];
+
   const renderProjects = data.map((feature) => (
     <Grid item xs={12} md={4} lg={3} key={feature.filename}>
       <MDBox mt={3}>
@@ -58,10 +63,10 @@ function Project({ data }) {
           description={feature.description}
           category={feature.category}
           tags={[
-            { image: team3, name: "Nick Daniel" },
-            { image: team4, name: "Peterson" },
-            { image: team1, name: "Elena Morison" },
-            { image: team2, name: "Ryan Milly" },
+            { image: avatarPhoto, name: "Nick Daniel" },
+            { image: avatarPhoto, name: "Peterson" },
+            { image: avatarPhoto, name: "Elena Morison" },
+            { image: avatarPhoto, name: "Ryan Milly" },
           ]}
         />
       </MDBox>
@@ -70,15 +75,21 @@ function Project({ data }) {
 
   return (
     <DashboardLayout>
-      <MDBox>
+      <MDBox mt={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Filter />
+          <Grid item xs={12} md={4} lg={3}>
+            <DefaultInfoCard
+              icon="filter_alt"
+              title="Filter by tags"
+              description={
+                <DynamicCloud
+                  iconSlugs={slugs}
+                  id="DynamicCloud-filter"
+                  onclickEvent={onClickEvent}
+                />
+              }
+            />
           </Grid>
-        </Grid>
-      </MDBox>
-      <MDBox mt={2}>
-        <Grid container spacing={3}>
           {renderProjects}
         </Grid>
       </MDBox>

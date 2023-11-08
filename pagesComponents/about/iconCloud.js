@@ -21,7 +21,7 @@ const renderCustomIcon = (icon, onClickEvent) => {
   });
 };
 
-const DynamicCloud = ({ iconSlugs, id, onclickEvent }) => {
+const DynamicCloud = ({ iconSlugs, id, onclickEvent, styleCanvas = {} }) => {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -37,9 +37,9 @@ const DynamicCloud = ({ iconSlugs, id, onclickEvent }) => {
 
     return data.map((i) => renderCustomIcon(i, onclickEvent));
   }, [data]);
-
+  const props = { ...cloudProps, ...styleCanvas };
   return (
-    <Cloud id={id} {...cloudProps}>
+    <Cloud id={id} {...props}>
       {renderedIcons}
     </Cloud>
   );
