@@ -1,65 +1,71 @@
+import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import MDBox from "/components/MDBox";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import Image from "next/image";
 
 // Custom examples
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
 import SimpleBlogCard from "/examples/Cards/BlogCards/SimpleBlogCard";
 
-import imageSkate from "/assets/images/skate_1.jpg";
-import { useMaterialUIController } from "/context";
+import { hobbiesConstant } from "/utils/constants";
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "#0000",
+  border: "1px solid #000",
+  boxShadow: 24,
+};
 
 function Hobbies() {
-  const [controller] = useMaterialUIController();
-  const { darkMode } = controller;
+  const [modalData, setModalData] = useState(null);
+
+  const handleOpen = (d) => setModalData(d);
+  const handleClose = () => setModalData(null);
+
   return (
     <DashboardLayout>
       <MDBox mt={2}>
         <Grid container spacing={4}>
-          <Grid item xs={4} mb={2}>
-            <SimpleBlogCard
-              image={imageSkate}
-              title="Skateboarding"
-              description="Skateboarding is my art of movement since 2007, driving me to overcome obstacles with persistence and enjoy the camaraderie among peers. Favorite trick: Fakie Frontside 360 Heelflip."
-            />
-          </Grid>
-          <Grid item xs={4} mb={2}>
-            <SimpleBlogCard
-              image={imageSkate}
-              title="Amateur traveler"
-              description="Curious explorer, every journey is an opportunity to learn and unwind. From my first solo adventure to the upcoming Eurotrip, I mix planning with improvisation for a complete experience."
-            />
-          </Grid>
-
-          <Grid item xs={4} mb={2}>
-            <SimpleBlogCard
-              image={imageSkate}
-              title="Photo lover"
-              description="Photography for me is about capturing the essence of the moment, whether it's the smile of a stranger or the silhouette of a building. Each image tells a story."
-            />
-          </Grid>
-          <Grid item xs={4} mb={2}>
-            <SimpleBlogCard
-              image={imageSkate}
-              title="Biker"
-              description="On my custom bike, each route is a new story. Whether it's a challenging ride in the rain or a calm cruise."
-            />
-          </Grid>
-          <Grid item xs={4} mb={2}>
-            <SimpleBlogCard
-              image={imageSkate}
-              title="Cinephile"
-              description="A film buff with diverse tastes, I seek out movies that make an impact. I prefer the personal experience of watching films at home, though I never miss the big premieres in theaters."
-            />
-          </Grid>
-          <Grid item xs={4} mb={2}>
-            <SimpleBlogCard
-              image={imageSkate}
-              title="Bookworm"
-              description="Reading is synonymous with personal balance for me, with 'Ikigai' currently on my nightstand and a love for fiction that sparks imagination. I always opt for the touch and smell of a physical book."
-            />
-          </Grid>
+          {hobbiesConstant.map((element, k) => (
+            <Grid key={k} item xs={4} mb={2}>
+              <SimpleBlogCard
+                onClickImage={() => handleOpen(element)}
+                image={element.image}
+                title={element.title}
+                description={element.description}
+              />
+            </Grid>
+          ))}
         </Grid>
       </MDBox>
+      <Modal
+        open={modalData !== null}
+        onClose={handleClose}
+        aria-labelledby="parent-modal-title"
+        aria-describedby="parent-modal-description"
+      >
+        <Box sx={{ ...style, width: "auto" }}>
+          {modalData && modalData !== null && (
+            <Image
+              src={modalData.image}
+              alt={modalData.title}
+              width="auto"
+              quality={100}
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                maxHeight: "80vh",
+              }}
+            />
+          )}
+        </Box>
+      </Modal>
     </DashboardLayout>
   );
 }

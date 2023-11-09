@@ -11,7 +11,7 @@ import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDButton from "/components/MDButton";
 
-function SimpleBlogCard({ image, title, description, action }) {
+function SimpleBlogCard({ image, title, description, action, onClickImage }) {
   const renderAction =
     action &&
     (action.type === "external" ? (
@@ -35,21 +35,25 @@ function SimpleBlogCard({ image, title, description, action }) {
           shadow="md"
           width="100%"
           height="100%"
+          maxHeight="300px"
           position="relative"
           zIndex={1}
           overflow="hidden"
         >
-          {image.src ? (
-            <Image
-              src={image}
-              alt={title}
-              size="100%"
-              quality={100}
-              style={{ width: "100%", height: "100%", display: "block" }}
-            />
-          ) : (
-            image
-          )}
+          <div style={{ height: "100%", overflowY: "auto" }}>
+            {image.src ? (
+              <Image
+                onClick={onClickImage}
+                src={image}
+                alt={title}
+                size="100%"
+                quality={100}
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            ) : (
+              image
+            )}
+          </div>
         </MDBox>
         <MDBox
           borderRadius="lg"
@@ -92,6 +96,7 @@ SimpleBlogCard.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  onClickImage: PropTypes.func,
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]).isRequired,
     route: PropTypes.string.isRequired,
