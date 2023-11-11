@@ -19,7 +19,7 @@ function DashboardLayout({ children }) {
   useEffect(() => {
     setLayout(dispatch, "dashboard");
   }, [dispatch, pathname]);
-
+  console.log("pathname", pathname);
   return (
     <MDBox
       sx={({ breakpoints, transitions, functions: { pxToRem } }) => ({
@@ -35,8 +35,8 @@ function DashboardLayout({ children }) {
         },
       })}
     >
-      <div style={{minHeight:'87vh'}}>{children}</div>
-      <Footer />
+      <div style={{ minHeight: "87vh" }}>{children}</div>
+      {pathname && pathname !== "/" && <Footer />}
     </MDBox>
   );
 }
