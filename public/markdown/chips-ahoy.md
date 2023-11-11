@@ -1,19 +1,17 @@
 ---
 title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
-external_link: 
+image: /assets/chips-ahoy.gif
+description: Creamos 900 datos de entrenamiento por hora
+external_link: https://developmentseed.com/chips-ahoy/
 category: 
-  - python
   - reactjs
+  - javascript
 ---
 
-La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.
 
-```javascript
-function saludo(nombre) {
-  console.log(`Hola, ${nombre}!`);
-}
-```
+chips ahoy es una herramienta de clasificacion de imagenes, me encargue de reconstruir la herramienta, cambie el look completamente, le agregue capacidad para trabjar con archivos estaticos, trabajar con imagenes estaticas, un validador, estadisticas y carga de imagenes en segundo plano.
+gracias a esta nueva version, conseguimos clasificar 900 imagenes en una hora.
 
-![image](/public/assets/product-1-min.jpg)
+
+
+![image](/public/assets/chips-ahoy.gif)

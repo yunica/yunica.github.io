@@ -1,11 +1,16 @@
 ---
 title: "Josm Magic Wand plugin"
 image: /assets/product-1-min.jpg
-description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
+description: Estructuramos la informacion catastral de un gobierno local con una aplicacion geospacial
 external_link: 
 category: 
   - python
   - reactjs
+  - django
+  - amazonwebservices
+  - gdal
+  - leaflet
+  - openserver
 ---
 
 La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.

@@ -1,19 +1,16 @@
 ---
 title: "Josm Magic Wand plugin"
 image: /assets/product-1-min.jpg
-description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
+description: Climatescope es un ..
 external_link: 
 category: 
   - python
   - reactjs
 ---
 
-La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.
+Aporte en la canalizacion de datos y agregue algunas funcionalidades en la edicion del 2019 y 2020 de climatescope.
 
-```javascript
-function saludo(nombre) {
-  console.log(`Hola, ${nombre}!`);
-}
-```
+climatescope es un proyecto de ...
 
+ 
 ![image](/public/assets/product-1-min.jpg)

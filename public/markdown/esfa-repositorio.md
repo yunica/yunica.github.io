@@ -6,6 +6,8 @@ external_link:
 category: 
   - python
   - reactjs
+  - django
+  - amazonwebservices
 ---
 
 La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.

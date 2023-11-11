@@ -6,9 +6,39 @@ import {
   FilterDrama,
   Terminal,
 } from "@mui/icons-material";
-import photoSkate1 from "/assets/images/skate_4.jpeg";
-import photoTriump from "/assets/images/moto_triump.jpeg";
-import photoTraveJump from "/assets/images/travel_2.jpeg";
+// skate
+import skate from "/assets/images/skate.jpeg";
+import skate1 from "/assets/images/skate_1.jpeg";
+import skate2 from "/assets/images/skate_2.jpeg";
+import skate3 from "/assets/images/skate_3.png";
+import skate4 from "/assets/images/skate_4.jpg";
+// traveler
+import travel from "/assets/images/travel.jpeg";
+import travel1 from "/assets/images/travel_1.jpeg";
+import travel2 from "/assets/images/travel_2.jpeg";
+import travel3 from "/assets/images/travel_3.jpeg";
+import travel4 from "/assets/images/travel_4.jpeg";
+import travel5 from "/assets/images/travel_5.jpeg";
+import travel6 from "/assets/images/travel_6.jpeg";
+import travel7 from "/assets/images/travel_7.jpeg";
+import travel8 from "/assets/images/travel_8.jpeg";
+
+// photo
+import photo from "/assets/images/photo.jpeg";
+import photo0 from "/assets/images/photo_0.jpeg";
+import photo1 from "/assets/images/photo_1.jpeg";
+import photo2 from "/assets/images/photo_2.jpeg";
+import photo3 from "/assets/images/photo_3.jpeg";
+import photo4 from "/assets/images/photo_4.jpeg";
+import photo5 from "/assets/images/photo_5.jpeg";
+import photo6 from "/assets/images/photo_6.jpeg";
+
+// read
+import reader from "/assets/images/reader.jpeg";
+// moto
+import moto from "/assets/images/moto_1.jpeg";
+// cine
+import cine from "/assets/images/cine.jpeg";
 
 export const experience = [
   {
@@ -114,40 +144,55 @@ export const expertice = [
 
 export const hobbiesConstant = [
   {
-    image: photoSkate1,
-    title: "Skateboarding",
-    description:
-      "Skateboarding is my art of movement since 2007, driving me to overcome obstacles with persistence and enjoy the camaraderie among peers. Favorite trick: Fakie Frontside 360 Heelflip.",
-    images: [photoSkate1, photoTraveJump, photoTriump],
-  },
-  {
-    image: photoTraveJump,
+    image: travel,
     title: "Amateur traveler",
     description:
       "Curious explorer, every journey is an opportunity to learn and unwind. From my first solo adventure to the upcoming Eurotrip, I mix planning with improvisation for a complete experience.",
+    images: [
+      travel,
+      travel1,
+      travel6,
+      travel2,
+      travel3,
+      travel4,
+      travel5,
+      travel7,
+      travel8,
+    ],
   },
   {
-    image: photoSkate1,
+    image: skate,
+    title: "Skateboarding",
+    description:
+      "Skateboarding is my art of movement since 2007, driving me to overcome obstacles with persistence and enjoy the camaraderie among peers. Favorite trick: Fakie Frontside 360 Heelflip.",
+    images: [skate, skate1, skate4, skate3, skate2],
+  },
+  {
+    image: photo,
     title: "Photo lover",
     description:
       "Photography for me is about capturing the essence of the moment, whether it's the smile of a stranger or the silhouette of a building. Each image tells a story.",
+    images: [photo, photo1, photo0, photo2, photo3, photo4, photo5, photo6],
   },
   {
-    image: photoTriump,
+    image: moto,
     title: "Biker",
     description:
       "On my custom bike, each route is a new story. Whether it's a challenging ride in the rain or a calm cruise.",
+    images: [moto],
   },
   {
-    image: photoSkate1,
+    image: cine,
     title: "Cinephile",
     description:
       "A film buff with diverse tastes, I seek out movies that make an impact. I prefer the personal experience of watching films at home, though I never miss the big premieres in theaters.",
+    images: [cine],
   },
   {
-    image: photoSkate1,
+    image: reader,
     title: "Bookworm",
     description:
       "Reading is synonymous with personal balance for me, with 'Ikigai' currently on my nightstand and a love for fiction that sparks imagination. I always opt for the touch and smell of a physical book.",
+    images: [reader],
   },
 ];

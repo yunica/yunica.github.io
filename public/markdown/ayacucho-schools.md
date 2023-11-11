@@ -1,19 +1,18 @@
 ---
-title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
+title: "Ayacucho schools"
+image: /assets/ayacucho-school.gif
+description: Te preguntado cuantas oportunidades se abren con el acceso a internet a los estudiantes en ayacucho ?
 external_link: 
 category: 
   - python
   - reactjs
+  - mapbox
+  - github
+  - docker
 ---
 
-La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.
+sabemos que la educacion es un pilar para el desarrollo, lo que hice fue crear una tuberia de datos canaliza
 
-```javascript
-function saludo(nombre) {
-  console.log(`Hola, ${nombre}!`);
-}
-```
 
-![image](/public/assets/product-1-min.jpg)
+
+![image](/public/assets/ayacucho-school.gif)
