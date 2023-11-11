@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types"; // @mui material components
+import PropTypes from "prop-types"; 
 import Card from "@mui/material/Card";
 import MuiLink from "@mui/material/Link";
 
@@ -55,22 +55,8 @@ function SimpleBlogCard({ image, title, description, action, onClickImage }) {
             )}
           </div>
         </MDBox>
-        <MDBox
-          borderRadius="lg"
-          shadow="md"
-          width="100%"
-          height="100%"
-          position="absolute"
-          left={0}
-          top="3%"
-          sx={{
-            backgroundImage: `url(${image.src || image.props.src.src})`,
-            transform: "scale(0.94)",
-            filter: "blur(12px)",
-            backgroundSize: "cover",
-          }}
-        />
       </MDBox>
+
       <MDBox p={2}>
         <MDTypography
           display="inline"

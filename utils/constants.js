@@ -118,6 +118,7 @@ export const hobbiesConstant = [
     title: "Skateboarding",
     description:
       "Skateboarding is my art of movement since 2007, driving me to overcome obstacles with persistence and enjoy the camaraderie among peers. Favorite trick: Fakie Frontside 360 Heelflip.",
+    images: [photoSkate1, photoTraveJump, photoTriump],
   },
   {
     image: photoTraveJump,

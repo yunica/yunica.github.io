@@ -13,7 +13,6 @@ function Main() {
   return (
     <DashboardLayout>
       <Grid
-        templateColumns={{ sm: "4fr 1fr", xl: "1.2fr 1fr" }}
         maxWidth="100%"
         width="100%"
       >
