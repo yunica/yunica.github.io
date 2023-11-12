@@ -23,14 +23,16 @@ const CustomSvgIcon = ({ svgPath, color }) => (
 
 const RenderTags = ({ iconImage }) => {
   if (!(iconImage && iconImage.length > 0)) return null;
+console.log(iconImage)
+
   const iconImageFilter = iconImage.filter(
-    (i) => i.path && (i.path !== "Co" || i.hex !== "#000")
+    (i) => i.path && i.path !== "Co"
   );
 
   return (
     <AvatarGroup total={iconImageFilter.length}>
       {iconImageFilter.map((icon) => (
-        <Tooltip key={icon.slug} title={icon.title} placeholder="bottom">
+        <Tooltip key={icon.slug} title={icon.slug} placeholder="bottom">
           <Avatar
             alt={icon.slug}
             size="xs"

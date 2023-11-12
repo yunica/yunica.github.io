@@ -25,9 +25,13 @@ const DynamicCloud = ({ iconSlugs, id, onclickEvent, styleCanvas = {} }) => {
   const [data, setData] = useState();
 
   useEffect(() => {
-    fetchSimpleIcons({ slugs: iconSlugs }).then(({ simpleIcons }) =>
-      setData(Object.values(simpleIcons))
-    );
+    fetchSimpleIcons({ slugs: iconSlugs }).then(({ simpleIcons }) => {
+      const iconsList = Object.values(simpleIcons).map((i) => ({
+        ...i,
+        title: i.title === "icon" ? i.slug : i.title,
+      }));
+      setData(iconsList);
+    });
   }, [iconSlugs]);
 
   const renderedIcons = useMemo(() => {

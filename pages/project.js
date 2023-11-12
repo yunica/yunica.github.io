@@ -17,8 +17,8 @@ import MDBox from "/components/MDBox";
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
 import BookingCard from "/examples/Cards/BookingCard";
 import DynamicCloud from "/pagesComponents/about/iconCloud";
+import MDButton from "/components/MDButton";
 
-import avatarPhoto from "/assets/images/profile.jpeg";
 import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
 
 export async function getStaticProps() {
@@ -35,6 +35,7 @@ export async function getStaticProps() {
 
     return {
       filename,
+      category: [],
       ...data,
       contentHtml,
     };
@@ -46,24 +47,34 @@ export async function getStaticProps() {
 }
 
 function Project({ data }) {
+  const [filter, setFilter] = useState(null);
+
+  const clearFilter = () => setFilter(null);
+
   const onClickEvent = (ev) => {
     ev.preventDefault();
+    try {
+      setFilter(ev.target.title.toLowerCase());
+    } catch (error) {
+      setFilter(null);
+    }
   };
 
   const slugs = [...new Set([].concat(...data.map((i) => i.category)))];
-
-  const renderProjects = data.map((feature) => (
-    <Grid item xs={12} md={4} lg={3} key={feature.filename}>
-      <MDBox mt={3}>
-        <BookingCard
-          image={feature.image}
-          title={feature.title}
-          description={feature.description}
-          category={feature.category}
-        />
-      </MDBox>
-    </Grid>
-  ));
+  const renderProjects = data
+    .filter((i) => filter == null || i.category.includes(filter.toLowerCase()))
+    .map((feature) => (
+      <Grid item xs={12} md={4} lg={3} key={feature.filename}>
+        <MDBox mt={3}>
+          <BookingCard
+            image={feature.image}
+            title={feature.title}
+            description={feature.description}
+            category={feature.category}
+          />
+        </MDBox>
+      </Grid>
+    ));
 
   return (
     <DashboardLayout>
@@ -79,6 +90,18 @@ function Project({ data }) {
                   id="DynamicCloud-filter"
                   onclickEvent={onClickEvent}
                 />
+              }
+              value={
+                filter && (
+                  <MDButton
+                    variant="outlined"
+                    color="dark"
+                    size="small"
+                    onClick={clearFilter}
+                  >
+                    {filter}
+                  </MDButton>
+                )
               }
             />
           </Grid>
