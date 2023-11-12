@@ -8,10 +8,10 @@ import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
 // Images
 import Grid from "@mui/material/Grid";
 import Globe from "/pagesComponents/globe";
-
 import profileBw from "/assets/images/profile/profile_main_bw-min.png";
 import profileColor from "/assets/images/profile/profile_main_color-min.png";
 import { Typography } from "@mui/material";
+import { Card } from "@mui/material";
 
 import { useMaterialUIController } from "/context";
 
@@ -32,7 +32,43 @@ function Main() {
         >
           <Globe />
         </MDBox>
+
         <MDBox direction="column" zIndex="0">
+          <Grid
+            container
+            spacing={2}
+            style={{ position: "relative", height: "98vh" }}
+          >
+             <Grid item xs={8} md={7} xl={7}>
+            <div
+              style={{ position: "relative", width: "auto", height: "100%" }}
+            >
+              <Image
+                src={profileColor}
+                alt="background image"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                objectPosition="top"
+                style={{ height: "100%", minWidth: '60%'}}
+              />
+              <Card
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  margin: "0 20px",
+                  padding: "20px",
+                  background: "rgba(255, 255, 255, 0.8)",
+                }}
+              >
+                <Typography variant="h5">Junior G. Flores Martinez</Typography>
+                <Typography>Geospatial data engineer</Typography>
+              </Card>
+            </div>
+          </Grid>
+          {/* 
           <Grid container spacing={0}>
             <Grid item xs={8} md={7} xl={7}>
               <Grid container spacing={0}>
@@ -80,6 +116,9 @@ function Main() {
               </Grid>
             </Grid>
           </Grid>
+           */}
+          </Grid>
+
         </MDBox>
       </Grid>
     </DashboardLayout>
