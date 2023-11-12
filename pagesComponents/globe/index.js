@@ -5,10 +5,14 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as BufferGeometryUtils from "three/addons/utils/BufferGeometryUtils.js";
 import pointsData from "/assets/points.json";
+import { useMaterialUIController } from "/context";
 
-function Globe({ canvasStyle,  ...rest }) {
+function Globe({ canvasStyle, ...rest }) {
   const globeRef = useRef(null);
   const canvasRef = useRef(null);
+
+  const [controller] = useMaterialUIController();
+  const { darkMode } = controller;
 
   useEffect(() => {
     function createGlobe() {
@@ -45,14 +49,14 @@ function Globe({ canvasStyle,  ...rest }) {
         const renderer = new THREE.WebGLRenderer({
           canvas,
           antialias: true,
-          alpha: true, 
+          alpha: true,
         });
-        renderer.setClearColor(0x000000, 0); 
-        
+        renderer.setClearColor(0x000000, 0);
+
         renderer.setSize(width, height);
         // 4. Add points to canvas
         const pointMaterial = new THREE.MeshBasicMaterial({
-          color: "#4f5b6f", 
+          color: darkMode ? "#f0f2f5c7" : "#4f5b6f",
         });
         const geometries = [];
         for (const point of points) {
@@ -119,7 +123,7 @@ function Globe({ canvasStyle,  ...rest }) {
     }
 
     createGlobe();
-  }, []);
+  }, [darkMode]);
 
   return (
     <Box ref={globeRef} {...rest}>

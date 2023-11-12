@@ -12,7 +12,7 @@ import profileBw from "/assets/images/profile/profile_main_bw-min.png";
 import profileColor from "/assets/images/profile/profile_main_color-min.png";
 import { Typography } from "@mui/material";
 import { Card } from "@mui/material";
-
+import MDTypography from "/components/MDTypography";
 import { useMaterialUIController } from "/context";
 
 function Main() {
@@ -24,101 +24,68 @@ function Main() {
       <Grid maxWidth="100%" width="100%">
         <MDBox
           minWidth="700px"
-          height="90%"
+          height="95%"
           position="absolute"
-          right="15px"
+          right="5px"
           top="5%"
           display={{ sm: "none", md: "block" }}
         >
           <Globe />
         </MDBox>
-
         <MDBox direction="column" zIndex="0">
           <Grid
             container
             spacing={2}
-            style={{ position: "relative", height: "98vh" }}
+            style={{ position: "relative", height: "97vh" }}
           >
-             <Grid item xs={8} md={7} xl={7}>
-            <div
-              style={{ position: "relative", width: "auto", height: "100%" }}
-            >
-              <Image
-                src={profileColor}
-                alt="background image"
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-                objectPosition="top"
-                style={{ height: "100%", minWidth: '60%'}}
-              />
-              <Card
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  margin: "0 20px",
-                  padding: "20px",
-                  background: "rgba(255, 255, 255, 0.8)",
-                }}
+            <Grid item xs={12} md={7} xl={7}>
+              <div
+                style={{ position: "relative", width: "auto", height: "100%" }}
               >
-                <Typography variant="h5">Junior G. Flores Martinez</Typography>
-                <Typography>Geospatial data engineer</Typography>
-              </Card>
-            </div>
-          </Grid>
-          {/* 
-          <Grid container spacing={0}>
-            <Grid item xs={8} md={7} xl={7}>
-              <Grid container spacing={0}>
-                <Grid
-                  item
-                  xs={12}
-                  md={12}
-                  xl={12}
-                  style={{
-                    width: "100%",
-                    minHeight: "87vh",
-                    maxHeight: "98vh",
-                    height: "99vh",
-                    position: "relative",
-                  }}
-                >
-                  <Image
-                    src={darkMode ? profileColor : profileBw}
-                    alt="image"
-                    layout="fill"
-                    objectFit="contain"
-                    style={{
-                      minHeight: "87vh",
-                      maxWidth: "100%",
-                      maxHeight: "100%",
-                    }}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  md={12}
-                  xl={12}
+                <Image
+                  src={darkMode ? profileColor : profileBw}
+                  alt="background image"
+                  layout="fill"
+                  objectFit="cover"
+                  quality={100}
+                  objectPosition="top"
+                  style={{ height: "100%", minWidth: "60%" }}
+                />
+                <Card
                   style={{
                     position: "absolute",
                     bottom: 0,
-                    width: "100%",
-                    background: "rgba(255, 255, 255, 0.8)",
-                    marginTop: -100
+                    left: 0,
+                    right: 0,
+                    padding: "20px",
                   }}
+                  p={20}
                 >
-                  <Typography> Junior G. Flores Martinez</Typography>
-                  <Typography> Geospatial data engineer</Typography>
-                </Grid>
-              </Grid>
+                  <MDTypography
+                    variant="h4"
+                    fontWeight="medium"
+                    textTransform="uppercase"
+                  >
+                    Junior Flores
+                  </MDTypography>
+                  <MDTypography
+                    variant="h5"
+                    fontWeight="medium"
+                    textTransform="uppercase"
+                  >
+                   Geospatial data engineer
+                  </MDTypography>
+                  <MDTypography
+                      variant="button"
+                      color="text"
+                      fontWeight="light"
+                    >
+                    I am an engineer specialized in geospatial information systems (GIS), an expert in building tools for generating valuable data for machine learning (ML). I dedicate myself to perfecting data pipelines, transforming raw data into vital fuel for various applications. The backend is my safe zone.
+                  </MDTypography>
+                </Card>
+              </div>
             </Grid>
           </Grid>
-           */}
-          </Grid>
-
         </MDBox>
       </Grid>
     </DashboardLayout>

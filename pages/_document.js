@@ -19,6 +19,15 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="description"
+            content="Engineer specialized in geospatial information systems, expert in building tools for generating valuable data for machine learning."
+          />
+          <meta
+            name="keywords"
+            content="Geospatial Engineering, Backend, Python, Django, Flask, PostgreSQL, PostGIS, GeoDjango, Machine Learning, Geospatial Data, Yunica, Geospatial, ETL, Data Visualization"
+          />
+          <meta name="author" content="Junior Flores Martinez" />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStyleTags}
         </Head>

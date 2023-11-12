@@ -46,7 +46,7 @@ export const experience = [
     title: "Geospatial data engineer",
     dateTime: "Oct, 2019 - current",
     description:
-      "Desarolle herramientas y tuberias de datos para diferentes proyectos en Development Seed.",
+      "Developed data tools and pipelines for various projects, focusing on enhancing efficiency and data integrity. Development Seed.",
     detail: "",
   },
   {
@@ -54,7 +54,7 @@ export const experience = [
     title: "Cadastre assistant",
     dateTime: "Feb, 2019 - Oct, 2019",
     description:
-      "Me encargue de desarollar una aplicacion  espacial de catastro en SEDA Ayacucho",
+      "Led the development of a spatial cadastral application, integrating geospatial data management and analysis. SEDA Ayacucho",
     detail: "",
   },
   {
@@ -62,7 +62,7 @@ export const experience = [
     title: "Full stack developer",
     dateTime: "Oct, 2018 - current",
     description:
-      "Desarrollo productos a medida con diferentes instituciones, freelance",
+      "Design and develop custom software solutions for various institutions, specializing in full-stack development and geospatial applications.",
     detail: "",
   },
   {

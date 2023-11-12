@@ -238,7 +238,6 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
     }
   );
 
-  const isHome = pathname === "/";
   const modeIco = darkMode ? (
     <Icon fontSize="medium">light_mode</Icon>
   ) : (
@@ -266,28 +265,18 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </MDTypography>
         </MDBox>
-        {!isHome && (
-          <Link href="/">
-            <MDBox display="flex" alignItems="center" justifyContent="center">
-              {brand && brand.src && (
-                <MDAvatar
-                  src={brand.src}
-                  alt={brandName}
-                  size={miniSidenav ? "md" : "xxl"}
-                />
-              )}
-            </MDBox>
-          </Link>
-        )}
+        <Link href="/">
+          <MDBox display="flex" alignItems="center" justifyContent="center">
+            {brand && brand.src && (
+              <MDAvatar
+                src={brand.src}
+                alt={brandName}
+                size={miniSidenav ? "md" : "xxl"}
+              />
+            )}
+          </MDBox>
+        </Link>
       </MDBox>
-      {!isHome && (
-        <Divider
-          light={
-            (!darkMode && !whiteSidenav && !transparentSidenav) ||
-            (darkMode && !transparentSidenav && whiteSidenav)
-          }
-        />
-      )}
       <List>
         {renderRoutes}
         <Link
