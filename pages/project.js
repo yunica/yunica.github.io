@@ -48,10 +48,8 @@ export async function getStaticProps() {
 function Project({ data }) {
   const onClickEvent = (ev) => {
     ev.preventDefault();
-    console.log(ev);
   };
 
-  console.log(data);
   const slugs = [...new Set([].concat(...data.map((i) => i.category)))];
 
   const renderProjects = data.map((feature) => (
@@ -62,12 +60,6 @@ function Project({ data }) {
           title={feature.title}
           description={feature.description}
           category={feature.category}
-          tags={[
-            { image: avatarPhoto, name: "Nick Daniel" },
-            { image: avatarPhoto, name: "Peterson" },
-            { image: avatarPhoto, name: "Elena Morison" },
-            { image: avatarPhoto, name: "Ryan Milly" },
-          ]}
         />
       </MDBox>
     </Grid>

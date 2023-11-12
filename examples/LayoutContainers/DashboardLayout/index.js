@@ -19,7 +19,6 @@ function DashboardLayout({ children }) {
   useEffect(() => {
     setLayout(dispatch, "dashboard");
   }, [dispatch, pathname]);
-  console.log("pathname", pathname);
   return (
     <MDBox
       sx={({ breakpoints, transitions, functions: { pxToRem } }) => ({

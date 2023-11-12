@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
-
+import Avatar from "@mui/material/Avatar";
+import AvatarGroup from "@mui/material/AvatarGroup";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types"; // @mui material components
 import Card from "@mui/material/Card";
@@ -10,29 +12,51 @@ import Tooltip from "@mui/material/Tooltip";
 // Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
-import MDAvatar from "/components/MDAvatar";
+import { fetchSimpleIcons } from "react-icon-cloud";
+import { SvgIcon } from "@mui/material";
 
-function BookingCard({ image, title, description, category, tags }) {
-  const renderTags =
-    tags &&
-    tags.map(({ image: media, name }) => (
-      <Tooltip key={name} title={name} placement="bottom">
-        <MDAvatar
-          src={media.src || media}
-          alt={name}
-          size="xs"
-          sx={({ borders: { borderWidth }, palette: { white } }) => ({
-            border: `${borderWidth[2]} solid ${white.main}`,
-            cursor: "pointer",
-            position: "relative",
-            ml: -1.25,
-            "&:hover, &:focus": {
-              zIndex: "10",
-            },
-          })}
-        />
-      </Tooltip>
-    ));
+const CustomSvgIcon = ({ svgPath, color }) => (
+  <SvgIcon>
+    <path d={svgPath} fill={color} />
+  </SvgIcon>
+);
+
+const RenderTags = ({ iconImage }) => {
+  if (!(iconImage && iconImage.length > 0)) return null;
+  const iconImageFilter = iconImage.filter(
+    (i) => i.path && (i.path !== "Co" || i.hex !== "#000")
+  );
+
+  return (
+    <AvatarGroup total={iconImageFilter.length}>
+      {iconImageFilter.map((icon) => (
+        <Tooltip key={icon.slug} title={icon.title} placeholder="bottom">
+          <Avatar
+            alt={icon.slug}
+            size="xs"
+            sx={{
+              width: 24,
+              height: 24,
+            }}
+          >
+            <CustomSvgIcon svgPath={icon.path} color={icon.hex} />
+          </Avatar>
+        </Tooltip>
+      ))}
+    </AvatarGroup>
+  );
+};
+
+function BookingCard({ image, title, description, category }) {
+  const [iconImage, setIconImage] = useState(null);
+
+  useEffect(() => {
+    if (category && category.length) {
+      fetchSimpleIcons({ slugs: category }).then(({ simpleIcons }) => {
+        setIconImage(Object.values(simpleIcons));
+      });
+    }
+  }, [category]);
 
   return (
     <Card
@@ -130,10 +154,9 @@ function BookingCard({ image, title, description, category, tags }) {
         px={3}
         lineHeight={1}
       >
-        <MDTypography variant="body2" fontWeight="regular" color="text">
-          {category}
-        </MDTypography>
-        <MDBox display="flex">{renderTags}</MDBox>
+        <MDBox display="flex">
+          <RenderTags iconImage={iconImage} />
+        </MDBox>
       </MDBox>
     </Card>
   );
@@ -149,9 +172,8 @@ BookingCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.arrayOf(PropTypes.object),
   location: PropTypes.node,
-  tags: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default BookingCard;
