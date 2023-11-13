@@ -1,16 +1,22 @@
 ---
-title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
-external_link: 
-category: 
+title: "Esfa - Admision"
+image: /assets/esfa-admision.png
+description: I developed from Scratch the System for Admission Exams for the Music University.
+external_link: https://admision.esfa-c.edu.pe/
+category:
   - python
-  - reactjs
+  - react
   - django
-  - amazonwebservices
+  - amazonaws
+  - amazons3
+  - amazonec2
+  - postgresql
+  - vuedotjs
+  - githubactions
+  - nginx
 ---
 
-La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.
+bod
 
 ```javascript
 function saludo(nombre) {

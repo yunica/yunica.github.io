@@ -63,10 +63,10 @@ function Main() {
                 >
                   <MDTypography
                     variant="h4"
-                    fontWeight="medium"
+                    fontWeight="bold"
                     textTransform="uppercase"
                   >
-                    Junior Flores
+                    Junior Flores 
                   </MDTypography>
                   <MDTypography
                     variant="h5"

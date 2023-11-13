@@ -8,13 +8,14 @@ import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 import Tooltip from "@mui/material/Tooltip";
-
+import { Link } from "@mui/material";
 // Custom components
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import { fetchSimpleIcons } from "react-icon-cloud";
 import { SvgIcon } from "@mui/material";
-
+import GitHubIcon from "@mui/icons-material/GitHub";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 const CustomSvgIcon = ({ svgPath, color }) => (
   <SvgIcon>
     <path d={svgPath} fill={color} />
@@ -23,14 +24,11 @@ const CustomSvgIcon = ({ svgPath, color }) => (
 
 const RenderTags = ({ iconImage }) => {
   if (!(iconImage && iconImage.length > 0)) return null;
-console.log(iconImage)
 
-  const iconImageFilter = iconImage.filter(
-    (i) => i.path && i.path !== "Co"
-  );
+  const iconImageFilter = iconImage.filter((i) => i.path && i.path !== "Co");
 
   return (
-    <AvatarGroup total={iconImageFilter.length}>
+    <AvatarGroup max={iconImageFilter.length + 2}>
       {iconImageFilter.map((icon) => (
         <Tooltip key={icon.slug} title={icon.slug} placeholder="bottom">
           <Avatar
@@ -49,9 +47,8 @@ console.log(iconImage)
   );
 };
 
-function BookingCard({ image, title, description, category }) {
+function BookingCard({ image, title, description, category, external_link, repo }) {
   const [iconImage, setIconImage] = useState(null);
-
   useEffect(() => {
     if (category && category.length) {
       fetchSimpleIcons({ slugs: category }).then(({ simpleIcons }) => {
@@ -79,37 +76,25 @@ function BookingCard({ image, title, description, category }) {
         <MDBox
           borderRadius="lg"
           shadow="md"
-          width={"100%"}
+          width="100%"
           height="100%"
+          maxHeight="200px"
           position="relative"
           zIndex={1}
           overflow="hidden"
         >
-          <Image
-            src={image}
-            alt={title}
-            size="100%"
-            width={100}
-            height={100}
-            quality={100}
-            style={{ width: "100%", height: "100%", display: "block" }}
-          />
+          <div style={{ height: "100%", overflowY: "auto" }}>
+            <Image
+              src={image}
+              alt={title}
+              size="100%"
+              width={100}
+              height={100}
+              quality={80}
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
         </MDBox>
-        <MDBox
-          borderRadius="lg"
-          shadow="md"
-          width="100%"
-          height="100%"
-          position="absolute"
-          left={0}
-          top="0"
-          sx={{
-            backgroundImage: `url(${image})`,
-            transform: "scale(0.94)",
-            filter: "blur(12px)",
-            backgroundSize: "cover",
-          }}
-        />
       </MDBox>
       <MDBox textAlign="center" pt={3} px={3}>
         <MDBox
@@ -118,31 +103,49 @@ function BookingCard({ image, title, description, category }) {
           alignItems="center"
           mt={-8}
         >
-          <Tooltip title="Refresh" placement="bottom">
+          {external_link && (
+            <Tooltip title="open link" placement="bottom">
+              <MDTypography
+                variant="body1"
+                color="primary"
+                lineHeight={1}
+                sx={{ cursor: "pointer", mx: 3 }}
+              >
+                <Link href={external_link} target="_blank">
+                  <Icon color="inherit">link</Icon>
+                </Link>
+              </MDTypography>
+            </Tooltip>
+          )}
+          {repo && (
+            <Tooltip title="open repo" placement="bottom">
+              <MDTypography
+                variant="body1"
+                color="error"
+                lineHeight={1}
+                sx={{ cursor: "pointer", mx: 3 }}
+              >
+                <Link href={repo} target="_blank">
+                  <GitHubIcon color="inherit" />
+                </Link>
+              </MDTypography>
+            </Tooltip>
+          )}
+          <Tooltip title="view detail" placement="bottom">
             <MDTypography
               variant="body1"
-              color="primary"
+              color="secondary"
               lineHeight={1}
               sx={{ cursor: "pointer", mx: 3 }}
             >
-              <Icon color="inherit">refresh</Icon>
-            </MDTypography>
-          </Tooltip>
-          <Tooltip title="Edit" placement="bottom">
-            <MDTypography
-              variant="body1"
-              color="dark"
-              lineHeight={1}
-              sx={{ cursor: "pointer", mx: 3 }}
-            >
-              <Icon color="inherit">edit</Icon>
+              <RemoveRedEyeIcon color="inherit" />
             </MDTypography>
           </Tooltip>
         </MDBox>
         <MDTypography variant="h5" fontWeight="regular" sx={{ mt: 4 }}>
           {title}
         </MDTypography>
-        <MDTypography variant="body2" color="text" sx={{ mt: 1.5, mb: 1 }}>
+        <MDTypography variant="body2" color="text" sx={{ mt: 1, mb: 1 }}>
           {description}
         </MDTypography>
       </MDBox>
@@ -166,7 +169,7 @@ function BookingCard({ image, title, description, category }) {
 
 // Setting default values for the props of BookingCard
 BookingCard.defaultProps = {
-  tags: [],
+  tagcategorys: [],
 };
 
 // Typechecking props for the BookingCard
@@ -174,8 +177,10 @@ BookingCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  category: PropTypes.arrayOf(PropTypes.object),
+  category: PropTypes.arrayOf(PropTypes.string),
   location: PropTypes.node,
+  external_link: PropTypes.string,
+  repo: PropTypes.string,
 };
 
 export default BookingCard;

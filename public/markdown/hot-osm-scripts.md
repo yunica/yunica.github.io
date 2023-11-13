@@ -1,20 +1,15 @@
 ---
-title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
-external_link: 
+title: "Data process - HOT"
+image: /assets/hot-osm.png
+description: As Part of the Response to the Earthquake in Türkiye, I Prepared Scripts to Process Data from OpenStreetMap, Tasking Manager.
+external_link: https://twitter.com/piligab/status/1633191384789262338
 category: 
   - python
   - docker
-  - osm
+  - openstreetmap
+  - gdal
+
 ---
 
-La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.
+bod
 
-```javascript
-function saludo(nombre) {
-  console.log(`Hola, ${nombre}!`);
-}
-```
-
-![image](/public/assets/product-1-min.jpg)

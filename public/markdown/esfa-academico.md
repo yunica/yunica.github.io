@@ -1,13 +1,19 @@
 ---
-title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
-external_link: 
+title: "Esfa - Academico"
+image: /assets/esfa-academico.png
+description: I developed from Scratch the Academic System for the Music University, Including Modules for Students, Teachers, Grade Management, Enrollments, etc.
+external_link: https://www.esfa-c.edu.pe/
 category: 
   - python
-  - reactjs
+  - react
   - django
-  - amazonwebservices
+  - amazonaws
+  - amazons3
+  - amazonec2
+  - postgresql
+  - vuedotjs
+  - githubactions
+  - nginx
 ---
 
 La universidad de musica esfa, 

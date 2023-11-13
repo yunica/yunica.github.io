@@ -1,14 +1,16 @@
 ---
-title: "Josm Magic Wand plugin"
+title: "etl - open aq"
 image: /assets/product-1-min.jpg
 description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
-external_link: 
+repo: https://github.com/openaq/openaq-fetch
+draft: true
 category: 
   - nodejs
+  - aws
 
 ---
 
-La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.
+bod
 
 ```javascript
 function saludo(nombre) {

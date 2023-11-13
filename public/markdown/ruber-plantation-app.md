@@ -3,12 +3,13 @@ title: "Josm Magic Wand plugin"
 image: /assets/product-1-min.jpg
 description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
 external_link: 
+draft: true
 category: 
   - python
-  - reactjs
+  - react
 ---
 
-La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.
+bod
 
 ```javascript
 function saludo(nombre) {

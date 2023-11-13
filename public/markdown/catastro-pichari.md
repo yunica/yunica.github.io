@@ -1,24 +1,24 @@
 ---
-title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: Estructuramos la informacion catastral de un gobierno local con una aplicacion geospacial
+title: "Catastre pichari"
+image: /assets/catastro-pich.png
+description: I structured the cadastral information of a local government with a geospatial application.
 external_link: 
 category: 
   - python
-  - reactjs
+  - react
   - django
-  - amazonwebservices
+  - amazonaws
+  - amazonecs
   - gdal
   - leaflet
-  - openserver
+  - openlayers
+  - postgresql
 ---
 
-La programación no es solo escribir código, es una forma de resolver problemas y crear arte. Cada línea de código puede ser tan hermosa y elegante como una pincelada en un lienzo.
+bod
 
 ```javascript
 function saludo(nombre) {
   console.log(`Hola, ${nombre}!`);
 }
 ```
-
-![image](/public/assets/product-1-min.jpg)

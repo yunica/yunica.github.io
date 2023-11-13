@@ -100,19 +100,7 @@ function Contact() {
                           />
                         </Grid>
                         <Grid item xs={12} sm={12} mt={2} mb={2}>
-                          <MDBox
-                            width="100%"
-                            display="flex"
-                            justifyContent="center"
-                          >
-                            <MDButton
-                              type="submit"
-                              variant="gradient"
-                              color="dark"
-                            >
-                              Send
-                            </MDButton>
-                          </MDBox>
+                  
                         </Grid>
                       </Grid>
                     </Grid>

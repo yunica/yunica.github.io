@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
 
 // pages/api/markdown.js
 import fs from "fs";
@@ -20,6 +18,7 @@ import DynamicCloud from "/pagesComponents/about/iconCloud";
 import MDButton from "/components/MDButton";
 
 import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
+import CloseIcon from '@mui/icons-material/Close';
 
 export async function getStaticProps() {
   const markdownDirectory = path.join(process.cwd(), "public", "markdown");
@@ -42,8 +41,8 @@ export async function getStaticProps() {
   });
   const data = await Promise.all(dataPromises);
 
-  // data.sort((a, b) => (a.date > b.date ? -1 : 1));
-  return { props: { data } };
+  const data_ = data.filter(a => !a.draft);
+  return { props: { data: data_ } };
 }
 
 function Project({ data }) {
@@ -68,9 +67,7 @@ function Project({ data }) {
         <MDBox mt={3}>
           <BookingCard
             image={feature.image}
-            title={feature.title}
-            description={feature.description}
-            category={feature.category}
+            {...feature}
           />
         </MDBox>
       </Grid>
@@ -99,7 +96,7 @@ function Project({ data }) {
                     size="small"
                     onClick={clearFilter}
                   >
-                    {filter}
+                    {filter}  <CloseIcon size="md" color="error" />
                   </MDButton>
                 )
               }
