@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import createCache from "@emotion/cache";
 
 // @emotion/react components
-import { CacheProvider } from "@emotion/react";// @mui material components
+import { CacheProvider } from "@emotion/react"; // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
@@ -25,7 +25,7 @@ import theme from "/assets/theme";
 import themeDark from "/assets/theme-dark";
 
 // Custom routes
-import routes from "/routes";
+import routes from "/utils/routes";
 
 // Custom Context Provider
 import {
@@ -33,6 +33,7 @@ import {
   useMaterialUIController,
   setMiniSidenav,
   setOpenConfigurator,
+  setDarkMode,
 } from "/context";
 
 // Images
@@ -41,12 +42,26 @@ import favicon32 from "/assets/images/favicon-32.png";
 import favicon96 from "/assets/images/favicon-96.png";
 import appleIcon from "/assets/images/favicon-96.png";
 
-import brandWhite from "/assets/images/logo-ct.png";
-import brandDark from "/assets/images/logo-ct-dark.png";
 import avatarPhoto from "/assets/images/profile.jpeg";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createCache({ key: "css", prepend: true });
+
+const ButtonContainer = ({ children }) => (
+  <div
+    style={{
+      position: "fixed",
+      right: "2rem",
+      top: "2rem",
+      display: "flex",
+      flexDirection: "column",
+      gap: "1rem",
+      zIndex: 99,
+    }}
+  >
+    {children}
+  </div>
+);
 
 function Main({ Component, pageProps }) {
   const [controller, dispatch] = useMaterialUIController();
@@ -71,6 +86,7 @@ function Main({ Component, pageProps }) {
     }
   };
   const handleMiniSidenav = () => setMiniSidenav(dispatch, !miniSidenav);
+  const handleDarkMode = () => setDarkMode(dispatch, !darkMode);
 
   // Close sidenav when mouse leave mini sidenav
   const handleOnMouseLeave = () => {
@@ -95,9 +111,6 @@ function Main({ Component, pageProps }) {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
-  const brandIcon =
-    (transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite;
-
   const configsButton = (
     <MDBox
       display="flex"
@@ -108,16 +121,33 @@ function Main({ Component, pageProps }) {
       bgColor="white"
       shadow="sm"
       borderRadius="50%"
-      position="fixed"
-      right="2rem"
-      top="2rem"
       zIndex={99}
       color="dark"
-      sx={{ cursor: "pointer" }}
+      sx={{ cursor: "pointer", marginBottom: "1rem" }}
       onClick={handleMiniSidenav}
     >
       <Icon fontSize="small" color="inherit">
         {miniSidenav ? "menu_open" : "menu"}
+      </Icon>
+    </MDBox>
+  );
+  const darkModeButton = (
+    <MDBox
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      width="3.25rem"
+      height="3.25rem"
+      bgColor={darkMode ? "white" : "dark"}
+      shadow="sm"
+      borderRadius="50%"
+      zIndex={99}
+      color={darkMode ? "dark" : "white"}
+      sx={{ cursor: "pointer", marginBottom: "1rem" }}
+      onClick={handleDarkMode}
+    >
+      <Icon fontSize="small" color="inherit">
+        {darkMode ? "light_mode" : "dark_mode"}
       </Icon>
     </MDBox>
   );
@@ -136,7 +166,10 @@ function Main({ Component, pageProps }) {
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
-          {configsButton}
+          <ButtonContainer>
+            {configsButton}
+            {darkModeButton}
+          </ButtonContainer>
         </>
       )}
     </ThemeProvider>
@@ -168,7 +201,7 @@ function MyApp({
             href={favicon96.src}
           />
           <link rel="apple-touch-icon" sizes="96x96" href={appleIcon.src} />
-          <title>backend</title>
+          <title>Junior | Geospatial Data Enginee</title>
         </Head>
         <Main Component={Component} pageProps={pageProps} />
       </CacheProvider>

@@ -4,15 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 // prop-types is a library for typechecking of props.
-import PropTypes from "prop-types";// @mui material components
+import PropTypes from "prop-types"; // @mui material components
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 
 // Custom components
 import MDBox from "/components/MDBox";
@@ -242,7 +238,6 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
     }
   );
 
-  const isHome = pathname === "/";
   const modeIco = darkMode ? (
     <Icon fontSize="medium">light_mode</Icon>
   ) : (
@@ -270,28 +265,18 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </MDTypography>
         </MDBox>
-        {!isHome && (
-          <Link href="/">
-            <MDBox display="flex" alignItems="center" justifyContent="center">
-              {brand && brand.src && (
-                <MDAvatar
-                  minisidenav={miniSidenav}
-                  src={brand.src}
-                  alt={brandName}
-                />
-              )}
-            </MDBox>
-          </Link>
-        )}
+        <Link href="/">
+          <MDBox display="flex" alignItems="center" justifyContent="center">
+            {brand && brand.src && (
+              <MDAvatar
+                src={brand.src}
+                alt={brandName}
+                size={miniSidenav ? "md" : "xxl"}
+              />
+            )}
+          </MDBox>
+        </Link>
       </MDBox>
-      {!isHome && (
-        <Divider
-          light={
-            (!darkMode && !whiteSidenav && !transparentSidenav) ||
-            (darkMode && !transparentSidenav && whiteSidenav)
-          }
-        />
-      )}
       <List>
         {renderRoutes}
         <Link

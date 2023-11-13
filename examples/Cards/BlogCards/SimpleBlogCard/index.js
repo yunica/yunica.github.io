@@ -1,10 +1,8 @@
-
-
 import Link from "next/link";
 import Image from "next/image";
 
 // prop-types is a library for typechecking of props
-import PropTypes from "prop-types";// @mui material components
+import PropTypes from "prop-types"; 
 import Card from "@mui/material/Card";
 import MuiLink from "@mui/material/Link";
 
@@ -13,7 +11,22 @@ import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import MDButton from "/components/MDButton";
 
-function SimpleBlogCard({ image, title, description, action }) {
+function SimpleBlogCard({ image, title, description, action, onClickImage }) {
+  const renderAction =
+    action &&
+    (action.type === "external" ? (
+      <MuiLink href={action.route} target="_blank" rel="noreferrer">
+        <MDButton color={action.color ? action.color : "dark"}>
+          {action.label}
+        </MDButton>
+      </MuiLink>
+    ) : (
+      <Link href={action.route}>
+        <MDButton color={action.color ? action.color : "dark"}>
+          {action.label}
+        </MDButton>
+      </Link>
+    ));
   return (
     <Card>
       <MDBox position="relative" borderRadius="lg" mt={-3} mx={2}>
@@ -22,65 +35,43 @@ function SimpleBlogCard({ image, title, description, action }) {
           shadow="md"
           width="100%"
           height="100%"
+          maxHeight="300px"
           position="relative"
           zIndex={1}
           overflow="hidden"
         >
-          {image.src ? (
-            <Image
-              src={image}
-              alt={title}
-              size="100%"
-              quality={100}
-              style={{ width: "100%", height: "100%", display: "block" }}
-            />
-          ) : (
-            image
-          )}
+          <div style={{ height: "100%", overflowY: "auto" }}>
+            {image.src ? (
+              <Image
+                onClick={onClickImage}
+                src={image}
+                alt={title}
+                size="100%"
+                quality={100}
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            ) : (
+              image
+            )}
+          </div>
         </MDBox>
-        <MDBox
-          borderRadius="lg"
-          shadow="md"
-          width="100%"
-          height="100%"
-          position="absolute"
-          left={0}
-          top="3%"
-          sx={{
-            backgroundImage: `url(${image.src || image.props.src.src})`,
-            transform: "scale(0.94)",
-            filter: "blur(12px)",
-            backgroundSize: "cover",
-          }}
-        />
       </MDBox>
-      <MDBox p={3}>
+
+      <MDBox p={2}>
         <MDTypography
           display="inline"
-          variant="h3"
+          variant="h5"
           textTransform="capitalize"
           fontWeight="bold"
         >
           {title}
         </MDTypography>
-        <MDBox mt={2} mb={3}>
+        <MDBox mt={2} mb={2}>
           <MDTypography variant="body2" component="p" color="text">
             {description}
           </MDTypography>
         </MDBox>
-        {action.type === "external" ? (
-          <MuiLink href={action.route} target="_blank" rel="noreferrer">
-            <MDButton color={action.color ? action.color : "dark"}>
-              {action.label}
-            </MDButton>
-          </MuiLink>
-        ) : (
-          <Link href={action.route}>
-            <MDButton color={action.color ? action.color : "dark"}>
-              {action.label}
-            </MDButton>
-          </Link>
-        )}
+        {renderAction}
       </MDBox>
     </Card>
   );
@@ -91,6 +82,7 @@ SimpleBlogCard.propTypes = {
   image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  onClickImage: PropTypes.func,
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]).isRequired,
     route: PropTypes.string.isRequired,
@@ -106,7 +98,7 @@ SimpleBlogCard.propTypes = {
       "default",
     ]),
     label: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
 };
 
 export default SimpleBlogCard;

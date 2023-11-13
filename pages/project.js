@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Grid from "@mui/material/Grid";
 
 // pages/api/markdown.js
@@ -15,12 +14,11 @@ import MDBox from "/components/MDBox";
 // Settings page components
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
 import BookingCard from "/examples/Cards/BookingCard";
-import Filter from "/pagesComponents/project/Filter";
+import DynamicCloud from "/pagesComponents/about/iconCloud";
+import MDButton from "/components/MDButton";
 
-import team1 from "/assets/images/team-1.jpg";
-import team2 from "/assets/images/team-2.jpg";
-import team3 from "/assets/images/team-3.jpg";
-import team4 from "/assets/images/team-4.jpg";
+import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
+import CloseIcon from '@mui/icons-material/Close';
 
 export async function getStaticProps() {
   const markdownDirectory = path.join(process.cwd(), "public", "markdown");
@@ -36,48 +34,74 @@ export async function getStaticProps() {
 
     return {
       filename,
+      category: [],
       ...data,
       contentHtml,
     };
   });
   const data = await Promise.all(dataPromises);
 
-  // data.sort((a, b) => (a.date > b.date ? -1 : 1));
-
-  return { props: { data } };
+  const data_ = data.filter(a => !a.draft);
+  return { props: { data: data_ } };
 }
 
 function Project({ data }) {
-  const renderProjects = data.map((feature) => (
-    <Grid item xs={12} md={4} lg={3} key={feature.filename}>
-      <MDBox mt={3}>
-        <BookingCard
-          image={feature.image}
-          title={feature.title}
-          description={feature.description}
-          category={feature.category}
-          tags={[
-            { image: team3, name: "Nick Daniel" },
-            { image: team4, name: "Peterson" },
-            { image: team1, name: "Elena Morison" },
-            { image: team2, name: "Ryan Milly" },
-          ]}
-        />
-      </MDBox>
-    </Grid>
-  ));
+  const [filter, setFilter] = useState(null);
+
+  const clearFilter = () => setFilter(null);
+
+  const onClickEvent = (ev) => {
+    ev.preventDefault();
+    try {
+      setFilter(ev.target.title.toLowerCase());
+    } catch (error) {
+      setFilter(null);
+    }
+  };
+
+  const slugs = [...new Set([].concat(...data.map((i) => i.category)))];
+  const renderProjects = data
+    .filter((i) => filter == null || i.category.includes(filter.toLowerCase()))
+    .map((feature) => (
+      <Grid item xs={12} md={4} lg={3} key={feature.filename}>
+        <MDBox mt={3}>
+          <BookingCard
+            image={feature.image}
+            {...feature}
+          />
+        </MDBox>
+      </Grid>
+    ));
 
   return (
     <DashboardLayout>
-      <MDBox>
+      <MDBox mt={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Filter />
+          <Grid item xs={12} md={4} lg={3}>
+            <DefaultInfoCard
+              icon="filter_alt"
+              title="Filter by tags"
+              description={
+                <DynamicCloud
+                  iconSlugs={slugs}
+                  id="DynamicCloud-filter"
+                  onclickEvent={onClickEvent}
+                />
+              }
+              value={
+                filter && (
+                  <MDButton
+                    variant="outlined"
+                    color="dark"
+                    size="small"
+                    onClick={clearFilter}
+                  >
+                    {filter}  <CloseIcon size="md" color="error" />
+                  </MDButton>
+                )
+              }
+            />
           </Grid>
-        </Grid>
-      </MDBox>
-      <MDBox mt={2}>
-        <Grid container spacing={3}>
           {renderProjects}
         </Grid>
       </MDBox>
