@@ -1,19 +1,13 @@
 ---
-title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: Cree una aplicacion de escritorio que raspara informacion de la pagina de  
+title: "Web scraping - cej"
+image: /assets/pj-web-scraping.gif
+description: I played with python and did web scraping, bypassing cache and sessions that did not allow a normal user to browse freely.
 external_link: 
-draft: true
 category: 
   - python
+  - docker
+  - selenium
 ---
 
 bod
-
-```javascript
-function saludo(nombre) {
-  console.log(`Hola, ${nombre}!`);
-}
-```
-
-![image](/public/assets/product-1-min.jpg)
+ 

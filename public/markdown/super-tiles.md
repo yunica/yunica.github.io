@@ -1,20 +1,16 @@
 ---
-title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: Engineer specialized in geospatial information systems, expert in building tools for generating valuable data for machine learning.
+title: "Super tiles"
+image: /assets/super-tiles.jpeg
+description: Super Tiles is a script designed to accept vector data input, whether points or polygons, and generate (download and join) tiles from tms services.
 external_link: 
-draft: true
+repo: https://github.com/developmentseed/super_tiles
 category: 
   - python
   - react
+  - docker
+  - gnubash
+  - gdal
+  - pandas
+  - awsfargate
 ---
 
-bod
-
-```javascript
-function saludo(nombre) {
-  console.log(`Hola, ${nombre}!`);
-}
-```
-
-![image](/public/assets/product-1-min.jpg)

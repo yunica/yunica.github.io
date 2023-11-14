@@ -1,12 +1,19 @@
 ---
-title: "Josm Magic Wand plugin"
-image: /assets/product-1-min.jpg
-description: Engineer specialized in geospatial information systems, expert in building tools for generating valuable data for machine learning.
-external_link: 
-draft: true
+title: "Rubber Risk Mitigation Platform"
+image: /assets/cccmc.jpg
+description: The rubber risk mitigation platform, developed to back the Guidelines for Sustainable Development of Natural Rubber.
+external_link: https://cccmc-sustainable-rubber.surge.sh/
+repo: https://github.com/developmentseed/cccmc-sustainable-rubber-web
 category: 
   - python
   - react
+  - mapbox
+  - githubactions
+  - githubpages
+  - docker
+  - gdal
+  - openlayers
+  - i18next
 ---
 
 bod
