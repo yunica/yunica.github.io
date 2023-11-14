@@ -1,7 +1,7 @@
 ---
 title: "Josm Magic Wand plugin"
 image: /assets/product-1-min.jpg
-description: La programación no es solo escribir código, es una forma de resolver problemas y crear arte
+description: Engineer specialized in geospatial information systems, expert in building tools for generating valuable data for machine learning.
 external_link: 
 draft: true
 category: 

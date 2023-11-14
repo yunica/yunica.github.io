@@ -26,7 +26,7 @@ function SalesTableCell({ title, content, image, noBorder, ...rest }) {
             {image.src ? (
               <Image
                 src={image}
-                alt={content}
+                alt="Junior Flores - Geospatial Data Engineer"
                 quality={100}
                 sizes="100%"
                 style={{ width: "100%", height: "100%", display: "block" }}

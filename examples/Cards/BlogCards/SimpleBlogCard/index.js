@@ -45,7 +45,7 @@ function SimpleBlogCard({ image, title, description, action, onClickImage }) {
               <Image
                 onClick={onClickImage}
                 src={image}
-                alt={title}
+                alt="Junior Flores - Geospatial Data Engineer"
                 size="100%"
                 quality={100}
                 style={{ width: "100%", height: "auto", display: "block" }}

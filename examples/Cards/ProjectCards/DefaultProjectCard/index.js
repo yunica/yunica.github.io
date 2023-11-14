@@ -27,7 +27,7 @@ function DefaultProjectCard({
     <Tooltip key={name} title={name} placement="bottom">
       <MDAvatar
         src={media.src || media}
-        alt={name}
+        alt="Junior Flores - Geospatial Data Engineer"
         size="xs"
         sx={({ borders: { borderWidth }, palette: { white } }) => ({
           border: `${borderWidth[2]} solid ${white.main}`,
@@ -64,7 +64,7 @@ function DefaultProjectCard({
           {image && image.src ? (
             <Image
               src={image}
-              alt={title}
+              alt="Junior Flores - Geospatial Data Engineer"
               quality={100}
               sizes="100%"
               style={{ width: "100%", height: "100%", display: "block" }}

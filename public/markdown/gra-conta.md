@@ -5,7 +5,7 @@ description: With a Notebook, I Structured the Governmental Accounting Records o
 external_link: 
 category: 
   - python
-  - jupyternotebook
+  - jupyter
 ---
 
 bod

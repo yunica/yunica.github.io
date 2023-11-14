@@ -239,7 +239,7 @@ function Accounts() {
           flexDirection={{ xs: "column", sm: "row" }}
         >
           <MDBox display="flex" alignItems="center">
-            <MDAvatar src={logoAsana.src} alt="Slack logo" variant="rounded" />
+            <MDAvatar src={logoAsana.src} alt="Junior Flores - Geospatial Data Engineer" variant="rounded" />
             <MDBox ml={2} lineHeight={0}>
               <MDTypography variant="h5" fontWeight="medium">
                 Asana

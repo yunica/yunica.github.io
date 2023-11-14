@@ -86,7 +86,7 @@ function BookingCard({ image, title, description, category, external_link, repo 
           <div style={{ height: "100%", overflowY: "auto" }}>
             <Image
               src={image}
-              alt={title}
+              alt="Junior Flores - Geospatial Data Engineer"
               size="100%"
               width={100}
               height={100}
@@ -142,7 +142,7 @@ function BookingCard({ image, title, description, category, external_link, repo 
             </MDTypography>
           </Tooltip>
         </MDBox>
-        <MDTypography variant="h5" fontWeight="regular" sx={{ mt: 4 }}>
+        <MDTypography variant="h2" fontWeight="regular" sx={{ mt: 4, fontSize: '1.25rem' }}>
           {title}
         </MDTypography>
         <MDTypography variant="body2" color="text" sx={{ mt: 1, mb: 1 }}>

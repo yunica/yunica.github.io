@@ -24,7 +24,7 @@ function ProfilesList({ title, profiles, shadow }) {
         mb={1}
       >
         <MDBox mr={2}>
-          <MDAvatar src={image.src || image} alt="something here" shadow="md" />
+          <MDAvatar src={image.src || image} alt="Junior Flores - Geospatial Data Engineer" shadow="md" />
         </MDBox>
         <MDBox
           display="flex"

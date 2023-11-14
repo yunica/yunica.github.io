@@ -12,7 +12,7 @@ category:
   - mapbox
   - gdal
   - pandas
-  - postgres
+  - postgresql
   - openstreetmap
   
 ---

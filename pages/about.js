@@ -92,7 +92,8 @@ function About({ data }) {
                   px={2}
                 >
                   <MDTypography
-                    variant="h6"
+                    variant="h2"
+                    sx={{fontSize: '1rem'}}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -130,7 +131,8 @@ function About({ data }) {
                   px={2}
                 >
                   <MDTypography
-                    variant="h6"
+                    variant="h2"
+                    sx={{fontSize: '1rem'}}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -169,7 +171,8 @@ function About({ data }) {
                   px={2}
                 >
                   <MDTypography
-                    variant="h6"
+                    variant="h2"
+                    sx={{fontSize: '1rem'}}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -199,7 +202,8 @@ function About({ data }) {
                   px={2}
                 >
                   <MDTypography
-                    variant="h6"
+                    variant="h2"
+                    sx={{fontSize: '1rem'}}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -230,7 +234,8 @@ function About({ data }) {
                   px={2}
                 >
                   <MDTypography
-                    variant="h6"
+                    variant="h2"
+                    sx={{fontSize: '1rem'}}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >

@@ -201,7 +201,7 @@ function MyApp({
             href={favicon96.src}
           />
           <link rel="apple-touch-icon" sizes="96x96" href={appleIcon.src} />
-          <title>Junior | Geospatial Data Enginee</title>
+          <title>Junior Flores - Geospatial Data Engineer Specializing in GIS and ML Data Tools</title>
         </Head>
         <Main Component={Component} pageProps={pageProps} />
       </CacheProvider>

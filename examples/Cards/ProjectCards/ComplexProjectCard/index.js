@@ -28,7 +28,7 @@ function ComplexProjectCard({
       <MDAvatar
         key={memberKey}
         src={member.src || member}
-        alt="member profile"
+        alt="Junior Flores - Geospatial Data Engineer"
         size="xs"
         sx={({ borders: { borderWidth }, palette: { white } }) => ({
           border: `${borderWidth[2]} solid ${white.main}`,

@@ -270,7 +270,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             {brand && brand.src && (
               <MDAvatar
                 src={brand.src}
-                alt={brandName}
+                alt="Junior Flores - Geospatial Data Engineer"
                 size={miniSidenav ? "md" : "xxl"}
               />
             )}

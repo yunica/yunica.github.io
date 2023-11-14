@@ -24,10 +24,10 @@ function BasicInfo() {
       <MDBox component="form" pb={3} px={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <FormField label="First Name" placeholder="Alec" />
+            <FormField label="First Name" placeholder="Junior" />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <FormField label="Last Name" placeholder="Thompson" />
+            <FormField label="Last Name" placeholder="Flores" />
           </Grid>
           <Grid item xs={12}>
             <Grid container spacing={3}>

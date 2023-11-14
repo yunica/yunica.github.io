@@ -25,7 +25,7 @@ function Header() {
           <Grid item>
             <MDAvatar
               src={burceMars.src}
-              alt="profile-image"
+              alt="Junior Flores - Geospatial Data Engineer"
               size="xl"
               shadow="sm"
             />
