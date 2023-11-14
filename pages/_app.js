@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
+import Script from "next/script";
 
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -184,6 +185,16 @@ function MyApp({
   return (
     <MaterialUIControllerProvider>
       <CacheProvider value={emotionCache}>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-4EWKTJNZHV" />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `}
+        </Script>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="shortcut icon" href={favicon.src} />
@@ -201,7 +212,10 @@ function MyApp({
             href={favicon96.src}
           />
           <link rel="apple-touch-icon" sizes="96x96" href={appleIcon.src} />
-          <title>Junior Flores - Geospatial Data Engineer Specializing in GIS and ML Data Tools</title>
+          <title>
+            Junior Flores - Geospatial Data Engineer Specializing in GIS and ML
+            Data Tools
+          </title>
         </Head>
         <Main Component={Component} pageProps={pageProps} />
       </CacheProvider>

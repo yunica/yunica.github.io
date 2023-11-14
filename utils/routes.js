@@ -42,7 +42,8 @@ export const socialRoute = [
   {
     type: "collapse",
     name: "fmjg21@gmail.com",
-    key: "fmjg21",
+    key: "fmjg21gmailcom",
+    href: "mailto:fmjg21@gmail.com",
     route: "/about",
     icon: <Icon fontSize="medium">mail_open</Icon>,
     noCollapse: true,

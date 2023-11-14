@@ -23,7 +23,7 @@ const SocialContact = ( ) => {
         <MDBox key={itemKey} component="li">
           <MDTypography
             component="a"
-            href={`#`}
+            href={item.href || "#"}
             variant="button"
             fontWeight="regular"
             textTransform="capitalize"

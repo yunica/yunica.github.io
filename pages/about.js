@@ -73,7 +73,6 @@ function About({ data }) {
 
   const onClickEvent = (ev) => {
     ev.preventDefault();
-    console.log(ev);
   };
 
   return (
