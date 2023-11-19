@@ -1,6 +1,8 @@
 // @mui material components
 import Image from "next/image";
 import MDBox from "/components/MDBox";
+import MDButton from "/components/MDButton";
+import MuiLink from "@mui/material/Link";
 
 // Custom examples
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
@@ -17,6 +19,7 @@ function Main() {
   const [controller] = useMaterialUIController();
 
   const { darkMode } = controller;
+
   return (
     <DashboardLayout>
       <Grid maxWidth="100%" width="100%">
@@ -76,13 +79,25 @@ function Main() {
                     Geospatial data engineer
                   </MDTypography>
                   <MDTypography variant="body2" color="text" fontWeight="light">
-                    I am an engineer specialized in geospatial information
-                    systems (GIS), an expert in building tools for generating
-                    valuable data for machine learning (ML). I dedicate myself
-                    to perfecting data pipelines, transforming raw data into
-                    vital fuel for various applications. The backend is my safe
-                    zone.
+                    I am an data engineer specialized in geospatial information
+                    systems (GIS), skilled in building tools for generating
+                    valuable data for machine learning (ML). I am committed to
+                    refining data pipelines, effectively transforming raw data
+                    into essential fuel for various applications. The backend is
+                    my safe zone.
                   </MDTypography>
+                  <MDBox mt={2}>
+                    <MuiLink
+                      href="/junior-flores-cv.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                      download
+                    >
+                      <MDButton color={darkMode ? "primary" : "dark"}>
+                        Download resume
+                      </MDButton>
+                    </MuiLink>
+                  </MDBox>
                 </Card>
               </div>
             </Grid>
