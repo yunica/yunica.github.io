@@ -6,6 +6,7 @@ import MuiLink from "@mui/material/Link";
 
 // Custom examples
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
+import MiniStatisticsCard from "/examples/Cards/StatisticsCards/MiniStatisticsCard";
 // Images
 import Grid from "@mui/material/Grid";
 import Globe from "/pagesComponents/globe";
@@ -39,18 +40,18 @@ function Main() {
             spacing={2}
             style={{ position: "relative", height: "97vh" }}
           >
-            <Grid item xs={12} md={7} xl={7}>
+            <Grid item xs={12} md={8} xl={8}>
               <div
                 style={{ position: "relative", width: "auto", height: "100%" }}
               >
                 <Image
-                  src={darkMode ? profileColor : profileBw}
+                  src={darkMode ? profileBw : profileColor}
                   alt="Junior Flores - Geospatial Data Engineer"
                   layout="fill"
                   objectFit="cover"
-                  quality={100}
+                  quality={70}
                   objectPosition="top"
-                  style={{ height: "100%", minWidth: "60%" }}
+                  style={{ height: "100%", minWidth: "50%", maxWidth: "90%" }}
                 />
                 <Card
                   style={{
@@ -60,7 +61,7 @@ function Main() {
                     right: 0,
                     padding: "20px",
                   }}
-                  p={20}
+                  p={10}
                 >
                   <MDTypography
                     variant="h1"
@@ -98,6 +99,7 @@ function Main() {
                       </MDButton>
                     </MuiLink>
                   </MDBox>
+
                 </Card>
               </div>
             </Grid>
