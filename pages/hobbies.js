@@ -21,7 +21,7 @@ function Hobbies() {
       <MDBox mt={2}>
         <Grid container spacing={4}>
           {hobbiesConstant.map((element, k) => (
-            <Grid key={k} item xs={4} mb={2}>
+            <Grid key={k} item md={4} xs={12} mb={2}>
               <SimpleBlogCard
                 onClickImage={() => handleOpen(element)}
                 image={element.image}
