@@ -4,6 +4,7 @@ image: /assets/cccmc.jpg
 description: The rubber risk mitigation platform, developed to back the Guidelines for Sustainable Development of Natural Rubber.
 external_link: https://cccmc-sustainable-rubber.surge.sh/
 repo: https://github.com/developmentseed/cccmc-sustainable-rubber-web
+order: 1
 category: 
   - python
   - react

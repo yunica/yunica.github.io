@@ -4,6 +4,7 @@ image: /assets/peru-schools.gif
 description: Mobile Signal Coverage in Educational Institutions of Peru, An Interactive Visualization Tool.
 external_link: https://developmentseed.org/peru-mobile-signal-schools/
 repo: https://github.com/developmentseed/peru-mobile-signal-schools
+order: 1
 category: 
   - python
   - react
