@@ -129,8 +129,6 @@ function Globe({ canvasStyle, ...rest }) {
     <Box ref={globeRef} {...rest}>
       <canvas
         ref={canvasRef}
-        width="700"
-        height="600"
         style={{ outline: "none", ...canvasStyle }}
       />
     </Box>

@@ -6,10 +6,12 @@ import MuiLink from "@mui/material/Link";
 
 // Custom examples
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
-import MiniStatisticsCard from "/examples/Cards/StatisticsCards/MiniStatisticsCard";
+import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
 // Images
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 import Globe from "/pagesComponents/globe";
+
 import profileBw from "/assets/images/profile/profile_main_bw-min.png";
 import profileColor from "/assets/images/profile/profile_main_color-min.png";
 import { Card } from "@mui/material";
@@ -32,75 +34,124 @@ function Main() {
           top="5%"
           display={{ sm: "none", md: "block" }}
         >
-          <Globe />
+          <Globe width={800} height={800} />
         </MDBox>
         <MDBox direction="column" zIndex="0">
-          <Grid
-            container
-            spacing={2}
-            style={{ position: "relative", height: "97vh" }}
-          >
-            <Grid item xs={12} md={8} xl={8}>
+          <Grid container spacing={2}>
+            <Grid
+              item
+              xs={12}
+              md={8}
+              xl={8}
+              style={{ position: "relative", minHeight: "100vh" }}
+            >
               <div
-                style={{ position: "relative", width: "auto", height: "100%" }}
+                style={{
+                  position: "relative",
+                  width: "auto",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-end",
+                }}
               >
-                <Image
-                  src={darkMode ? profileBw : profileColor}
-                  alt="Junior Flores - Geospatial Data Engineer"
-                  layout="fill"
-                  objectFit="cover"
-                  quality={70}
-                  objectPosition="top"
-                  style={{ height: "100%", minWidth: "50%", maxWidth: "90%" }}
-                />
-                <Card
-                  style={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    padding: "20px",
+                <Box
+                  sx={{
+                    display: { xs: "none", md: "block" }, 
+                    height: "90%", 
+                    minWidth: "40%",
+                    maxWidth: "70%",
                   }}
-                  p={10}
                 >
-                  <MDTypography
-                    variant="h1"
-                    sx={{ fontSize: "1.5rem" }}
-                    fontWeight="bold"
-                    textTransform="uppercase"
-                  >
-                    Junior Flores
-                  </MDTypography>
-                  <MDTypography
-                    variant="h2"
-                    sx={{ fontSize: "1.25rem" }}
-                    fontWeight="medium"
-                    textTransform="uppercase"
-                  >
-                    Geospatial data engineer
-                  </MDTypography>
-                  <MDTypography variant="body2" color="text" fontWeight="light">
-                    I am an data engineer specialized in geospatial information
-                    systems (GIS), skilled in building tools for generating
-                    valuable data for machine learning (ML). I am committed to
-                    refining data pipelines, effectively transforming raw data
-                    into essential fuel for various applications. The backend is
-                    my safe zone.
-                  </MDTypography>
-                  <MDBox mt={2}>
-                    <MuiLink
-                      href="/junior-flores-cv.pdf"
-                      target="_blank"
-                      rel="noreferrer"
-                      download
+                  <Image
+                    src={profileColor}
+                    alt="Junior Flores - Geospatial Data Engineer"
+                    layout="fill"
+                    objectFit="cover"
+                    quality={70}
+                    objectPosition="top"
+                  />
+                </Box>
+                <Grid container spacing={1} zIndex={1}>
+                  <Grid item md={12} mt={3}>
+                    <MDTypography
+                      variant="h1"
+                      fontWeight="bold"
+                      textTransform="uppercase"
+                      textGradient={true}
+                      color={darkMode ? "primary" : "primary"}
                     >
-                      <MDButton color={darkMode ? "primary" : "dark"}>
-                        Download resume
-                      </MDButton>
-                    </MuiLink>
-                  </MDBox>
+                      Junior Flores
+                    </MDTypography>
+                  </Grid>
 
-                </Card>
+                  <Grid item md={12}>
+                    <MDTypography
+                      variant="h3"
+                      fontWeight="regular"
+                      textTransform="uppercase"
+                      textGradient={darkMode}
+                      color={darkMode ? "primary" : "primary"}
+                    >
+                      Geospatial data engineer
+                    </MDTypography>
+                  </Grid>
+                  <Grid item md={12}>
+                    <Card>
+                      <MDBox p={2}>
+                        <MDTypography
+                          variant="body2"
+                          color="dark"
+                          fontWeight="light"
+                        >
+                          I'm an data engineer specialized in geospatial
+                          information systems (GIS), skilled in building tools
+                          for generating valuable data for machine learning
+                          (ML). I am committed to refining data pipelines,
+                          effectively transforming raw data into essential fuel
+                          for various applications.
+                          <br />
+                          <br />
+                          The backend is my safe zone.
+                        </MDTypography>
+
+                        <MDBox mt={2}>
+                          <MuiLink
+                            href="/junior-flores-cv.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            download
+                          >
+                            <MDButton color={darkMode ? "primary" : "dark"}>
+                              Download resume
+                            </MDButton>
+                          </MuiLink>
+                        </MDBox>
+                      </MDBox>
+                    </Card>
+                  </Grid>
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DefaultInfoCard
+                      icon="insights"
+                      title="+5"
+                      description="Years of experience "
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DefaultInfoCard
+                      icon="work"
+                      title="+26"
+                      description="Projects completed"
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6} lg={4}>
+                    <DefaultInfoCard
+                      icon="terminal"
+                      title="+3"
+                      description="Open source packages"
+                    />
+                  </Grid>
+                </Grid>
               </div>
             </Grid>
           </Grid>
