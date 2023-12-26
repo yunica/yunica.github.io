@@ -11,6 +11,7 @@ import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Globe from "/pagesComponents/globe";
+import Icon from "@mui/material/Icon";
 
 import profileBw from "/assets/images/profile/profile_main_bw-min.png";
 import profileColor from "/assets/images/profile/profile_main_color-min.png";
@@ -57,8 +58,8 @@ function Main() {
               >
                 <Box
                   sx={{
-                    display: { xs: "none", md: "block" }, 
-                    height: "90%", 
+                    display: { xs: "none", md: "block" },
+                    height: "90%",
                     minWidth: "40%",
                     maxWidth: "70%",
                   }}
@@ -104,51 +105,56 @@ function Main() {
                           color="dark"
                           fontWeight="light"
                         >
-                          I'm an data engineer specialized in geospatial
-                          information systems (GIS), skilled in building tools
-                          for generating valuable data for machine learning
-                          (ML). I am committed to refining data pipelines,
-                          effectively transforming raw data into essential fuel
-                          for various applications.
+                          I am a Data Engineer specialized in Geospatial
+                          Information Systems (GIS), with extensive experience
+                          in developing optimized ETL (Extract, Transform, Load)
+                          processes and in creating tools for generating data
+                          for Machine Learning. As a Data Engineer, I am
+                          committed to refining data pipelines, effectively
+                          transforming raw data into essential resources for
+                          various applications.
                           <br />
-                          <br />
-                          The backend is my safe zone.
+                          The <b>backend</b> is my safe zone.
                         </MDTypography>
-
-                        <MDBox mt={2}>
-                          <MuiLink
-                            href="/junior-flores-cv.pdf"
-                            target="_blank"
-                            rel="noreferrer"
-                            download
-                          >
-                            <MDButton color={darkMode ? "primary" : "dark"}>
-                              Download resume
-                            </MDButton>
-                          </MuiLink>
-                        </MDBox>
                       </MDBox>
                     </Card>
                   </Grid>
-                  <Grid item xs={12} md={6} lg={4}>
+                  <Grid item xs={6} md={3} lg={3}>
                     <DefaultInfoCard
                       icon="insights"
                       title="+5"
                       description="Years of experience "
                     />
                   </Grid>
-                  <Grid item xs={12} md={6} lg={4}>
+                  <Grid item xs={6} md={3} lg={3}>
                     <DefaultInfoCard
                       icon="work"
                       title="+26"
                       description="Projects completed"
                     />
                   </Grid>
-                  <Grid item xs={12} md={6} lg={4}>
+                  <Grid item xs={6} md={3} lg={3}>
                     <DefaultInfoCard
                       icon="terminal"
                       title="+3"
                       description="Open source packages"
+                    />
+                  </Grid>
+                  <Grid item xs={6} md={3} lg={3}>
+                    <DefaultInfoCard
+                      color="success"
+                      iconLink={
+                        <MuiLink
+                          href="/junior-flores-cv.pdf"
+                          target="_blank"
+                          rel="noreferrer"
+                          download
+                        >
+                          <Icon fontSize="large">description</Icon>
+                        </MuiLink>
+                      }
+                      title="pdf"
+                      description="Download resume"
                     />
                   </Grid>
                 </Grid>
