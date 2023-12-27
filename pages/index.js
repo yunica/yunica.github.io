@@ -1,7 +1,6 @@
 // @mui material components
 import Image from "next/image";
 import MDBox from "/components/MDBox";
-import MDButton from "/components/MDButton";
 import MuiLink from "@mui/material/Link";
 
 // Custom examples

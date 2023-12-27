@@ -1,6 +1,9 @@
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 import { useMaterialUIController } from "/context";
+import MuiLink from "@mui/material/Link";
+import Icon from "@mui/material/Icon";
+import Tooltip from "@mui/material/Tooltip";
 
 const ListSkill = ({ data }) => {
   const [controller] = useMaterialUIController();
@@ -21,8 +24,9 @@ const ListSkill = ({ data }) => {
         <MDBox key={itemKey} component="li">
           <MDTypography
             component="label"
-            variant="button"
+            variant="body2"
             fontWeight="regular"
+            size="sm"
             textTransform="capitalize"
             sx={({
               borders: { borderRadius },
@@ -47,7 +51,29 @@ const ListSkill = ({ data }) => {
             <MDBox lineHeight={1} color={darkMode ? "white" : "dark"} mr={1}>
               {item.icon}
             </MDBox>
-            {item.name}
+            <MDBox color={darkMode ? "white" : "dark"} fontSize="small" fontWeight={1}>
+              <p>{item.name}</p>
+              {item.links && (
+                <label>
+                  {item.links.map((link, k) => (
+                    <MuiLink
+                      key={k}
+                      href={link}
+                      target="_blank"
+                      rel="noreferrer"
+                      download
+                      mr={1}
+                    >
+                      <Tooltip
+                        title={`link ${k + 1}`}
+                      >
+                        <Icon fontSize="medium">link</Icon>
+                      </Tooltip>
+                    </MuiLink>
+                  ))}
+                </label>
+              )}
+            </MDBox>
           </MDTypography>
         </MDBox>
       ))}

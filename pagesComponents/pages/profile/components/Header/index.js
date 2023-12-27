@@ -44,7 +44,7 @@ function Header({ children }) {
         display="flex"
         alignItems="center"
         position="relative"
-        minHeight="18.75rem"
+        minHeight="20.75rem"
         borderRadius="xl"
         sx={{
           backgroundImage: ({
@@ -63,7 +63,7 @@ function Header({ children }) {
       <Card
         sx={{
           position: "relative",
-          mt: -8,
+          mt: -18,
           mx: 3,
           py: 2,
           px: 2,

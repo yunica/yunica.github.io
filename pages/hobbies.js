@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MDBox from "/components/MDBox";
+import MDTypography from "/components/MDTypography";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -50,7 +51,19 @@ function Hobbies() {
   return (
     <DashboardLayout>
       <MDBox mt={1}>
-        <PhotoAlbum layout="masonry" photos={photos_}  onClick={({ index }) => setIndex(index)} />
+        <MDTypography variant="body1" textTransform="none">
+          <MDTypography variant="h4" fontWeight="regular" opacity={0.7}>
+            INTERESTS AND HOBBIES
+          </MDTypography>
+          Beyond the realm of geospatial data, I am a travel enthusiast
+          capturing the globe through my camera&apos;s lens, always seeking fresh perspectives. As a skater, I relish
+          the freedom of movement; as a motorbiker, the joy of discovering new paths.
+        </MDTypography>
+        <PhotoAlbum
+          layout="masonry"
+          photos={photos_}
+          onClick={({ index }) => setIndex(index)}
+        />
         <Lightbox
           slides={photos_}
           open={index >= 0}
