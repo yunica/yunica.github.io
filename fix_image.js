@@ -3,18 +3,20 @@ const fs = require("fs").promises; // Utiliza la versión promisificada de fs
 const path = require("path");
 const os = require("os");
 
-const processImage = async (filePath, fileExtension) => {
+const processImage = async (filePath, fileExtension, min_size) => {
   try {
     const metadata = await sharp(filePath).metadata();
-
-    if (metadata.width > MIN_WIDTH) {
+    if (metadata.height > metadata.width) {
+      min_size = 768;
+    }
+    if (metadata.width >= min_size ) {
       const tempPath = path.join(os.tmpdir(), path.basename(filePath));
 
       switch (fileExtension.toLowerCase()) {
         case ".jpg":
         case ".jpeg":
           await sharp(filePath)
-            .resize(MIN_WIDTH)
+            .resize(min_size)
             .jpeg({ quality: 80 })
             .toFile(tempPath);
           console.log(`Processed jpg: ${filePath}`);
@@ -22,8 +24,14 @@ const processImage = async (filePath, fileExtension) => {
 
         case ".png":
           await sharp(filePath)
-            .resize(MIN_WIDTH)
-            .png({ compressionLevel: 6 })
+            .resize(min_size)
+            .png({
+              quality: 80,
+              compressionLevel: 9,
+              adaptiveFiltering: true,
+              force: true,
+            })
+            .withMetadata()
             .toFile(tempPath);
           console.log(`Processed png: ${filePath}`);
           break;
@@ -33,7 +41,6 @@ const processImage = async (filePath, fileExtension) => {
           break;
       }
       await fs.rename(tempPath, filePath);
-
     } else {
       console.log(`Image skipped (smaller than minimum width): ${filePath}`);
     }
@@ -52,7 +59,7 @@ const processDirectory = async (folderPath) => {
       const fileName = path.basename(file, fileExtension);
 
       if ([".jpg", ".jpeg", ".png"].includes(fileExtension.toLowerCase())) {
-        await processImage(filePath, fileExtension);
+        await processImage(filePath, fileExtension, MIN_WIDTH);
       }
     }
   } catch (err) {
