@@ -35,7 +35,7 @@ export async function getStaticProps() {
     };
   });
   const data = await Promise.all(dataPromises);
-
+  
   const data_ = data.filter((a) => !a.draft).sort((a, b) =>   a.order-b.order);
   return { props: { data: data_ } };
 }
