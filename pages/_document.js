@@ -21,14 +21,14 @@ export default class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="Discover the expertise of Junior Flores, a dedicated Geospatial Data Engineer. Specializing in GIS, he excels in building tools for ML data generation, perfecting data pipelines, and backend development."
+            content="Discover the expertise of Junior Flores, a dedicated Geospatial Data Engineer. Specializing in GIS, he excels in building tools for ML data generation, perfecting data pipelines and backend development."
           />
           <meta
             name="keywords"
-            content="Junior Flores, Geospatial Data Engineer, GIS, Machine Learning Data, Data Pipelines, Backend Development, Backend, Python, Django, Flask, PostgreSQL, PostGIS, GeoDjango, Machine Learning, Geospatial Data, Yunica, yunica, Geospatial, ETL, Data Visualization"
+            content="Junior Flores, Junior Flores Martinez, Geospatial Data Engineer, GIS, Machine Learning, Data, Data Pipelines, Backend Development, Backend, Python, Django, Flask, PostgreSQL, PostGIS, GeoDjango, Machine Learning, Geospatial Data, Yunica, yunica, Geospatial, ETL, Data Visualization"
           />
           <meta name="author" content="Junior Flores - Geospatial Data Engineer Specializing in GIS and ML Data Tools" />
-          <meta name="robots" content="index, follow"></meta>
+          <meta name="robots" content="index, about ,project"></meta>
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStyleTags}
         </Head>

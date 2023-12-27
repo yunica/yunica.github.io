@@ -10,7 +10,7 @@ import Icon from "@mui/material/Icon";
 import MDBox from "/components/MDBox";
 import MDTypography from "/components/MDTypography";
 
-function DefaultInfoCard({ color, icon, title, description, value }) {
+function DefaultInfoCard({ color, icon,iconLink, title, description, value }) {
   return (
     <Card>
       <MDBox p={2} mx={3} display="flex" justifyContent="center">
@@ -26,12 +26,13 @@ function DefaultInfoCard({ color, icon, title, description, value }) {
           borderRadius="lg"
           variant="gradient"
         >
-          <Icon fontSize="default">{icon}</Icon>
+          {iconLink||<Icon fontSize="large">{icon}</Icon>}
+          
         </MDBox>
       </MDBox>
       <MDBox pb={2} px={2} textAlign="center" lineHeight={1.25}>
         <MDTypography
-          variant="h6"
+          variant="h2"
           fontWeight="medium"
           textTransform="capitalize"
         >
@@ -71,7 +72,8 @@ DefaultInfoCard.propTypes = {
     "error",
     "dark",
   ]),
-  icon: PropTypes.node.isRequired,
+  icon: PropTypes.node,
+  iconLink: PropTypes.node,
   title: PropTypes.string.isRequired,
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

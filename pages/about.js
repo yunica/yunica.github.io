@@ -3,13 +3,12 @@ import { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import Card from "@mui/material/Card";
+import MDButton from "/components/MDButton";
 
 // pages/api/markdown.js
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 
 // Custom components
 import MDBox from "/components/MDBox";
@@ -24,13 +23,12 @@ import TimelineList from "/examples/Timeline/TimelineList";
 import TimelineItem from "/examples/Timeline/TimelineItem";
 
 // Data
-import { experience, expertice } from "/utils/constants";
+import { experience, expertice, contribution } from "/utils/constants";
 import { useMaterialUIController } from "/context";
 
 // Images
 import SocialContact from "/pagesComponents/social/contact";
 import ListSkill from "/pagesComponents/social/skills";
-import DynamicCloud from "/pagesComponents/about/iconCloud";
 
 export async function getStaticProps() {
   const markdownDirectory = path.join(process.cwd(), "public", "markdown");
@@ -70,16 +68,24 @@ function About({ data }) {
   );
 
   const slugs = [...new Set([].concat(...data.map((i) => i.category)))];
-
-  const onClickEvent = (ev) => {
-    ev.preventDefault();
-  };
+  const renderTechSkill = slugs.map((i) => (
+    <MDButton
+      key={i}
+      size="small"
+      color={darkMode ? "white" : "dark"}
+      circular
+      variant="outlined"
+      sx={{ margin: "3px" }}
+    >
+      {i.replace("dot", ".").replace("amazon", "amazon ")}
+    </MDButton>
+  ));
 
   return (
     <DashboardLayout>
-      <MDBox mb={2} />
+      <MDBox />
       <Header>
-        <MDBox mt={3} mb={3}>
+        <MDBox mt={2} mb={1}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6} xl={4}>
               <Card sx={{ height: "100%", boxShadow: "none" }}>
@@ -92,7 +98,7 @@ function About({ data }) {
                 >
                   <MDTypography
                     variant="h2"
-                    sx={{fontSize: '1rem'}}
+                    sx={{ fontSize: "1rem" }}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -110,8 +116,7 @@ function About({ data }) {
                   <MDBox mb={1} lineHeight={1}>
                     <MDTypography
                       variant="button"
-                      color="text"
-                      fontWeight="light"
+                      color={darkMode ? "white" : "dark"}
                     >
                       As a Geo-Spatial Data Engineer, I am zealous about turning
                       algorithms and data into impactful solutions. My technical
@@ -131,7 +136,7 @@ function About({ data }) {
                 >
                   <MDTypography
                     variant="h2"
-                    sx={{fontSize: '1rem'}}
+                    sx={{ fontSize: "1rem" }}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -142,25 +147,11 @@ function About({ data }) {
                     >
                       02{" "}
                     </MDTypography>{" "}
-                    Interests and Hobbies
+                    Tech skills
                   </MDTypography>
                 </MDBox>
                 <MDBox p={2}>
-                  <MDBox mb={1} lineHeight={1}>
-                    <MDTypography
-                      variant="button"
-                      color="text"
-                      fontWeight="light"
-                    >
-                      Beyond the realm of geospatial data, I am a travel
-                      enthusiast capturing the globe through my camera&apos;s
-                      lens and the narratives of cinema, always seeking fresh
-                      perspectives. As a skater, I relish the freedom of
-                      movement; as a biker, the joy of discovering new paths. In
-                      quieter times, I indulge in the strategic depths of
-                      reading and the camaraderie of board games.
-                    </MDTypography>
-                  </MDBox>
+                  <MDBox>{renderTechSkill}</MDBox>
                 </MDBox>
                 <MDBox
                   display="flex"
@@ -171,7 +162,7 @@ function About({ data }) {
                 >
                   <MDTypography
                     variant="h2"
-                    sx={{fontSize: '1rem'}}
+                    sx={{ fontSize: "1rem" }}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -202,7 +193,7 @@ function About({ data }) {
                 >
                   <MDTypography
                     variant="h2"
-                    sx={{fontSize: '1rem'}}
+                    sx={{ fontSize: "1rem" }}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -213,16 +204,12 @@ function About({ data }) {
                     >
                       04{" "}
                     </MDTypography>
-                    My allies
+                    my expertice
                   </MDTypography>
                 </MDBox>
                 <MDBox p={2}>
                   <MDBox lineHeight={1}>
-                    <DynamicCloud
-                      iconSlugs={slugs}
-                      id="DynamicCloud-about"
-                      onclickEvent={onClickEvent}
-                    />
+                    <ListSkill data={expertice} />
                   </MDBox>
                 </MDBox>
                 <MDBox
@@ -234,7 +221,7 @@ function About({ data }) {
                 >
                   <MDTypography
                     variant="h2"
-                    sx={{fontSize: '1rem'}}
+                    sx={{ fontSize: "1rem" }}
                     fontWeight="medium"
                     textTransform="uppercase"
                   >
@@ -245,23 +232,19 @@ function About({ data }) {
                     >
                       05{" "}
                     </MDTypography>
-                    My expertice
+                    My contribution
                   </MDTypography>
                 </MDBox>
                 <MDBox p={2}>
                   <MDBox lineHeight={1}>
-                    <ListSkill data={expertice} />
+                    <ListSkill data={contribution} />
                   </MDBox>
                 </MDBox>
               </Card>
               <Divider orientation="vertical" sx={{ mx: 0 }} />
             </Grid>
             <Grid item xs={12} xl={4}>
-              <TimelineList
-                title="Where I have worked"
-                dark={darkMode}
-                shadow={false}
-              >
+              <TimelineList title="MY CARRER" dark={darkMode} shadow={false}>
                 {renderTimelineItems}
               </TimelineList>
             </Grid>

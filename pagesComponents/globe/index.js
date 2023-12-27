@@ -56,7 +56,7 @@ function Globe({ canvasStyle, ...rest }) {
         renderer.setSize(width, height);
         // 4. Add points to canvas
         const pointMaterial = new THREE.MeshBasicMaterial({
-          color: darkMode ? "#f0f2f5c7" : "#4f5b6f",
+          color: darkMode ? "#b1b1b1" : "#4f5b6f",
         });
         const geometries = [];
         for (const point of points) {
@@ -129,8 +129,6 @@ function Globe({ canvasStyle, ...rest }) {
     <Box ref={globeRef} {...rest}>
       <canvas
         ref={canvasRef}
-        width="700"
-        height="600"
         style={{ outline: "none", ...canvasStyle }}
       />
     </Box>

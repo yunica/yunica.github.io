@@ -4,6 +4,7 @@ image: /assets/geokit.jpg
 description: GeoKit is a Command-Line Interface (CLI) tool developed in JavaScript, Python, and Java. 
 repo: https://github.com/developmentseed/geokit
 external_link: https://devseed.com/geokit-doc-seed/
+order: 1
 category: 
   - python
   - java

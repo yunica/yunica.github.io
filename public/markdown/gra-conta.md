@@ -3,6 +3,7 @@ title: "Clean data - GRA"
 image: /assets/gra-conta.png
 description: With a Notebook, I Structured the Governmental Accounting Records of an Accounting Office of a Local Government.
 external_link: 
+order: 2
 category: 
   - python
   - jupyter

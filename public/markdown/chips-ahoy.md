@@ -3,6 +3,7 @@ title: "Chips - ahoy"
 image: /assets/chips-ahoy-mini.gif
 description: Data Classification Tool for Machine Learning, Achieving Classification of 900 Images per Hour, Serverless.
 external_link: https://developmentseed.org/chips-ahoy/
+order: 2
 category: 
   - react
   - javascript

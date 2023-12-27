@@ -14,11 +14,6 @@ import MDBox from "/components/MDBox";
 // Settings page components
 import DashboardLayout from "/examples/LayoutContainers/DashboardLayout";
 import BookingCard from "/examples/Cards/BookingCard";
-import DynamicCloud from "/pagesComponents/about/iconCloud";
-import MDButton from "/components/MDButton";
-
-import DefaultInfoCard from "/examples/Cards/InfoCards/DefaultInfoCard";
-import CloseIcon from '@mui/icons-material/Close';
 
 export async function getStaticProps() {
   const markdownDirectory = path.join(process.cwd(), "public", "markdown");
@@ -40,35 +35,18 @@ export async function getStaticProps() {
     };
   });
   const data = await Promise.all(dataPromises);
-
-  const data_ = data.filter(a => !a.draft);
+  
+  const data_ = data.filter((a) => !a.draft).sort((a, b) =>   a.order-b.order);
   return { props: { data: data_ } };
 }
 
 function Project({ data }) {
-  const [filter, setFilter] = useState(null);
 
-  const clearFilter = () => setFilter(null);
-
-  const onClickEvent = (ev) => {
-    ev.preventDefault();
-    try {
-      setFilter(ev.target.title.toLowerCase());
-    } catch (error) {
-      setFilter(null);
-    }
-  };
-
-  const slugs = [...new Set([].concat(...data.map((i) => i.category)))];
   const renderProjects = data
-    .filter((i) => filter == null || i.category.includes(filter.toLowerCase()))
     .map((feature) => (
       <Grid item xs={12} md={4} lg={3} key={feature.filename}>
         <MDBox mt={3}>
-          <BookingCard
-            image={feature.image}
-            {...feature}
-          />
+          <BookingCard image={feature.image} {...feature} />
         </MDBox>
       </Grid>
     ));
@@ -77,31 +55,6 @@ function Project({ data }) {
     <DashboardLayout>
       <MDBox mt={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={4} lg={3}>
-            <DefaultInfoCard
-              icon="filter_alt"
-              title="Filter by tags"
-              description={
-                <DynamicCloud
-                  iconSlugs={slugs}
-                  id="DynamicCloud-filter"
-                  onclickEvent={onClickEvent}
-                />
-              }
-              value={
-                filter && (
-                  <MDButton
-                    variant="outlined"
-                    color="dark"
-                    size="small"
-                    onClick={clearFilter}
-                  >
-                    {filter}  <CloseIcon size="md" color="error" />
-                  </MDButton>
-                )
-              }
-            />
-          </Grid>
           {renderProjects}
         </Grid>
       </MDBox>

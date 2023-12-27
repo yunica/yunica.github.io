@@ -3,6 +3,7 @@ title: "Catastre pichari"
 image: /assets/catastro-pich.png
 description: I structured the cadastral information of a local government with a geospatial application.
 external_link: 
+order: 1
 category: 
   - python
   - react

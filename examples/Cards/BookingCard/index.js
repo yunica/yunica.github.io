@@ -30,7 +30,11 @@ const RenderTags = ({ iconImage }) => {
   return (
     <AvatarGroup max={iconImageFilter.length + 2}>
       {iconImageFilter.map((icon) => (
-        <Tooltip key={icon.slug} title={icon.slug} placeholder="bottom">
+        <Tooltip
+          key={icon.slug}
+          title={icon.title !== "icon" ? icon.title : icon.slug}
+          placeholder="bottom"
+        >
           <Avatar
             alt={icon.slug}
             size="xs"
@@ -47,7 +51,14 @@ const RenderTags = ({ iconImage }) => {
   );
 };
 
-function BookingCard({ image, title, description, category, external_link, repo }) {
+function BookingCard({
+  image,
+  title,
+  description,
+  category,
+  external_link,
+  repo,
+}) {
   const [iconImage, setIconImage] = useState(null);
   useEffect(() => {
     if (category && category.length) {
@@ -142,7 +153,11 @@ function BookingCard({ image, title, description, category, external_link, repo 
             </MDTypography>
           </Tooltip>
         </MDBox>
-        <MDTypography variant="h2" fontWeight="regular" sx={{ mt: 4, fontSize: '1.25rem' }}>
+        <MDTypography
+          variant="h2"
+          fontWeight="regular"
+          sx={{ mt: 4, fontSize: "1.25rem" }}
+        >
           {title}
         </MDTypography>
         <MDTypography variant="body2" color="text" sx={{ mt: 1, mb: 1 }}>
