@@ -15,6 +15,8 @@ category:
   - vuedotjs
   - githubactions
   - nginx
+  - amazonrds
+  - amazonroute53
 ---
 
 bod

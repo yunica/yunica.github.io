@@ -27,7 +27,7 @@ const ListSkill = ({ data }) => {
             variant="body2"
             fontWeight="regular"
             size="sm"
-            textTransform="capitalize"
+            textTransform="none"
             sx={({
               borders: { borderRadius },
               functions: { pxToRem },

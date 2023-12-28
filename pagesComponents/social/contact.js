@@ -26,7 +26,7 @@ const SocialContact = ( ) => {
             href={item.href || "#"}
             variant="button"
             fontWeight="regular"
-            textTransform="capitalize"
+            textTransform="lowercase"
             sx={({
               borders: { borderRadius },
               functions: { pxToRem },

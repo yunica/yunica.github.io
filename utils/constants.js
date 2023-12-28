@@ -45,7 +45,7 @@ export const experience = [
     icon: "school",
     title: "Systems Engineer",
     dateTime: "Jan, 2018 - Aug, 2018 ",
-    description: "Universidad Nacional de San Cristóbal de Huamanga",
+    description: "Universidad Nacional de San Cristóbal de Huamanga.",
     detail: "",
   },
 ];
@@ -97,7 +97,7 @@ export const expertice = [
   },
   {
     type: "collapse",
-    name: "Backend and Api developer",
+    name: "Backend and API Developer",
     key: "backend-developer",
     icon: <Api  fontSize="medium"  color="inherit" />,
     noCollapse: true,
@@ -111,7 +111,7 @@ export const expertice = [
   },
   {
     type: "collapse",
-    name: "Bash and docker fan",
+    name: "Bash and Docker Fan",
     key: "bash-fan",
     icon: <Terminal  fontSize="medium"  color="inherit" />,
     noCollapse: true,
@@ -125,7 +125,7 @@ export const expertice = [
   },
   {
     type: "collapse",
-    name: "Database development and management",
+    name: "Database Development and Management",
     key: "database-fan",
     icon: <Storage  fontSize="medium"  color="inherit" />,
     noCollapse: true,
@@ -136,7 +136,7 @@ export const expertice = [
 export const contribution = [
   {
     type: "collapse",
-    name: "Magic Wand plugin for Java OpenStreetMap Editor (JOSM),  it allows users to label areas using a spectrum of colors",
+    name: "Magic Wand Plugin for Java OpenStreetMap Editor (JOSM),  it allows users to label areas using a spectrum of colors",
     key: "magic-wand-josm",
     icon: <AutoFixHigh fontSize="medium" color="inherit" />,
     links: [
@@ -169,7 +169,7 @@ export const contribution = [
   },
   {
     type: "collapse",
-    name: "Landsat2geojson package is written in python and uses the EarthExplorer and Overpass portal interface to search, download, and process scenes from Landsat Collections via the command line.",
+    name: "Landsat2geojson Package is written in Python and uses the EarthExplorer and Overpass portal interface to search, download, and process scenes from Landsat Collections via the command line.",
     key: "landsat2geojson",
     icon: <SatelliteAltOutlined  fontSize="medium"  color="inherit" />,
     noCollapse: true,

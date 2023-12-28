@@ -118,7 +118,7 @@ function About({ data }) {
                       variant="button"
                       color={darkMode ? "white" : "dark"}
                     >
-                      As a Geo-Spatial Data Engineer, I am zealous about turning
+                      As a Geospatial Data Engineer, I am zealous about turning
                       algorithms and data into impactful solutions. My technical
                       prowess spans backend development to geoprocessing and
                       CI/CD. An active contributor and speaker in the
@@ -204,7 +204,7 @@ function About({ data }) {
                     >
                       04{" "}
                     </MDTypography>
-                    my expertice
+                    my expertise
                   </MDTypography>
                 </MDBox>
                 <MDBox p={2}>
@@ -244,7 +244,7 @@ function About({ data }) {
               <Divider orientation="vertical" sx={{ mx: 0 }} />
             </Grid>
             <Grid item xs={12} xl={4}>
-              <TimelineList title="MY CARRER" dark={darkMode} shadow={false}>
+              <TimelineList title="MY CAREER" dark={darkMode} shadow={false}>
                 {renderTimelineItems}
               </TimelineList>
             </Grid>

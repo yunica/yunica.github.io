@@ -114,10 +114,12 @@ function Hobbies() {
           INTERESTS AND HOBBIES
         </MDTypography>
         <MDTypography variant="body1" textTransform="none" opacity={0.7}>
-          Beyond the realm of geospatial data, I am a travel enthusiast
-          capturing the globe through my camera&apos;s lens, always seeking
-          fresh perspectives. As a skater, I relish the freedom of movement; as
-          a motorbiker, the joy of discovering new paths.
+          Outside of my professional life in geospatial data, I am a fervent
+          travel enthusiast, capturing the globe through my camera's lens in
+          search of fresh perspectives and hidden stories. Skating offers me a
+          sense of freedom and fluid motion. On my motorbike, I embrace the thrill of
+          discovering uncharted paths, each journey a blend of adventure and the
+          joy of the open road, revealing stories.
         </MDTypography>
         <PhotoAlbum
           layout="masonry"

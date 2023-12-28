@@ -15,6 +15,8 @@ category:
   - vuedotjs
   - githubactions
   - nginx
+  - amazonrds
+  - amazonroute53
 ---
 
 La universidad de musica esfa, 
