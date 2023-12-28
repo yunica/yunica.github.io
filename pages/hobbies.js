@@ -115,7 +115,7 @@ function Hobbies() {
         </MDTypography>
         <MDTypography variant="body1" textTransform="none" opacity={0.7}>
           Outside of my professional life in geospatial data, I am a fervent
-          travel enthusiast, capturing the globe through my camera's lens in
+          travel enthusiast, capturing the globe through my camera&apos;s lens in
           search of fresh perspectives and hidden stories. Skating offers me a
           sense of freedom and fluid motion. On my motorbike, I embrace the thrill of
           discovering uncharted paths, each journey a blend of adventure and the
