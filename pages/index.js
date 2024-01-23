@@ -104,7 +104,7 @@ function Main() {
                           color="dark"
                           fontWeight="light"
                         >
-                          I am a Data Engineer specialized inentonces Geospatial Information Systems(GIS), with extensive experience
+                          I am a Data Engineer specialized in Geospatial Information Systems(GIS), with extensive experience
                           in developing optimized ETL (Extract, Transform, Load)
                           processes and in creating tools for generating data
                           for Machine Learning. As a Data Engineer, I am
