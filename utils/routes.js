@@ -31,15 +31,6 @@ export const socialRoute = [
     icon: <TwitterIcon color="inherit" />,
     noCollapse: true,
   },
-  {
-    type: "collapse",
-    name: "fmjg21@gmail.com",
-    key: "mail",
-    href: "mailto:fmjg21@gmail.com",
-    route: "/about",
-    icon: <Icon fontSize="medium">mail_open</Icon>,
-    noCollapse: true,
-  },
 ];
 // Images
 const routes = [

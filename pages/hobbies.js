@@ -41,13 +41,8 @@ const photos = [
   { src: "/assets/images/cine.jpeg", width: 768, height: 1024 },
   { src: "assets/images/1691529553031.jpeg", width: 1200, height: 821 },
   { src: "assets/images/20231027_075218.png", width: 1200, height: 676 },
-  {
-    src: "assets/images/260474a9-3187-45a5-90c2-1c29cb45a625.png",
-    width: 1200,
-    height: 900,
-  },
+
   { src: "assets/images/F7OHA5-W8AA1P3I.jpeg", width: 1200, height: 675 },
-  { src: "assets/images/F7OWRfEaUAA06BV.jpeg", width: 1200, height: 675 },
   { src: "assets/images/Flo0-VwXgAAesYz.jpeg", width: 480, height: 360 },
   { src: "assets/images/FullSizeRender.png", width: 1200, height: 966 },
   { src: "assets/images/IMG_0366.png", width: 1200, height: 900 },
